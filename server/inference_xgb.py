@@ -72,9 +72,9 @@ def objective(trial, X, y, X_val, y_val):
     }
 
     model = xgb.train(parameters, dtrain,
-                      num_boost_round=parameters['n_estimators'],
+                      num_boost_round=10000,
                       evals=[(dtrain, 'train'), (dval, 'eval')],
-                      early_stopping_rounds=50)
+                      early_stopping_rounds=100)
 
     predictions = model.predict(dval)
     roc_auc = roc_auc_score(y_val, predictions)
@@ -102,15 +102,9 @@ def optimize_xgboost(file_name, model_name):
 
     # Train the final model with the best hyperparameters
     final_model = xgb.train(best_params, dtrain,
-                            num_boost_round=best_params['n_estimators'],
+                            num_boost_round=10000,
                             evals=[(dtrain, 'train'), (dval, 'eval')],
-                            early_stopping_rounds=50)
+                            early_stopping_rounds=100)
 
     # Save the final model
     final_model.save_model(f'{model_name}.json')
-
-# Пример использования:
-train_xgboost('dynamic_synthetic_dataset_funny', 'xgb_2')
-inference_xgboost('dynamic_synthetic_dataset_test', 'xgb_2', 'predict_xgb_3')
-# optimize_xgboost('synthetic_dataset', 'optim_xgb_first')
-# inference_xgboost('synthetic_dataset_test', 'optim_xgb_first', 'optim_predict_xgb_2')
