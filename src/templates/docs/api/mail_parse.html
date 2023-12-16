@@ -1,0 +1,739 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>api.mail_parse API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>api.mail_parse</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import imaplib
+import pandas as pd
+from email import message_from_bytes
+from email.header import decode_header
+from datetime import datetime
+from collections import Counter
+from email.utils import parsedate_tz, mktime_tz
+
+
+def get_message_size(msg):
+    &#34;&#34;&#34;
+    Возвращает размер сообщения, включая его вложения.
+
+    Parameters:
+    - msg (email.message.Message): Объект сообщения.
+
+    Returns:
+    - int: Размер сообщения в байтах.
+    &#34;&#34;&#34;
+    size = len(msg.as_bytes())
+    for part in msg.walk():
+        if part.get_payload(decode=True) is not None:
+            size += len(part.as_bytes())
+    return size
+
+
+def get_text_content(msg):
+    &#34;&#34;&#34;
+    Извлекает текстовое содержимое из сообщения.
+
+    Parameters:
+    - msg (email.message.Message): Объект сообщения.
+
+    Returns:
+    - str: Текстовое содержимое сообщения.
+    &#34;&#34;&#34;
+    if msg.is_multipart():
+        for part in msg.walk():
+            content_type = part.get_content_type()
+            if content_type == &#34;text/plain&#34;:
+                return part.get_payload(decode=True).decode(&#39;utf-8&#39;, &#39;ignore&#39;)
+    else:
+        return msg.get_payload(decode=True).decode(&#39;utf-8&#39;, &#39;ignore&#39;)
+
+
+def handle_mailbox_error(folder_name, status):
+    &#34;&#34;&#34;
+    Обрабатывает ошибку выбора почтовой папки.
+
+    Parameters:
+    - folder_name (str): Имя папки.
+    - status (str): Статус ошибки.
+
+    Returns:
+    - None
+    &#34;&#34;&#34;
+    print(f&#34;Не удалось выбрать папку &#39;{folder_name}&#39;. Код ошибки: {status}&#34;)
+    return None
+
+
+def parse_email(email_address, password, start_date, end_date, work_start_time, work_end_time):
+    &#34;&#34;&#34;
+    Анализирует электронную почту пользователя и возвращает статистику использования.
+
+    Parameters:
+    - email_address (str): Адрес электронной почты пользователя.
+    - password (str): Пароль для доступа к электронной почте.
+    - start_date (datetime): Начальная дата для анализа сообщений.
+    - end_date (datetime): Конечная дата для анализа сообщений.
+    - work_start_time (datetime.time): Начальное время рабочего дня.
+    - work_end_time (datetime.time): Конечное время рабочего дня.
+
+    Returns:
+    - dict: Словарь с результатами анализа электронной почты.
+    &#34;&#34;&#34;
+    result_dict = {
+        &#34;Email&#34;: email_address,
+        &#34;Sent Messages&#34;: 0,
+        &#34;Received Messages&#34;: 0,
+        &#34;Recipients in Sent Messages&#34;: 0,
+        &#34;Bcc Recipients in Sent Messages&#34;: 0,
+        &#34;Cc Recipients in Sent Messages&#34;: 0,
+        &#34;Replies to Messages&#34;: 0,
+        &#34;Characters in Outgoing Messages&#34;: 0,
+        &#34;Messages Outside Working Hours&#34;: 0,
+        &#34;Bytes Sent&#34; : 0,
+        &#34;Bytes Received&#34;: 0,
+        &#34;Unanswered Questions&#34;: 0,
+        &#34;Attachments in Sent Messages&#34;: 0,
+    }
+
+    with imaplib.IMAP4_SSL(&#34;imap.gmail.com&#34;) as mail:
+        mail.login(email_address, password)
+        
+        start_date_str = start_date.strftime(&#34;%d-%b-%Y&#34;)
+        end_date_str = end_date.strftime(&#34;%d-%b-%Y&#34;)
+
+        date_search_query = f&#39;(SINCE &#34;{start_date_str}&#34; BEFORE &#34;{end_date_str}&#34;)&#39;
+
+        status, _ = mail.select(&#39;[Gmail]/&amp;BB4EQgQ,BEAEMAQyBDsENQQ9BD0ESwQ1-&#39;) #Sent
+        if status != &#39;OK&#39;:
+            return handle_mailbox_error(&#39;Sent&#39;, status)
+        
+        sent_result, sent_data = mail.search(None, date_search_query)
+        
+        if sent_result != &#39;OK&#39;:
+            print(f&#34;Ошибка при поиске отправленных сообщений: {sent_result}&#34;)
+            return None
+        sent_message_numbers = sent_data[0].split()
+        result_dict[&#34;Sent Messages&#34;] = len(sent_message_numbers)
+
+        recipients_counter = Counter()
+        bcc_recipients_counter = Counter()
+        cc_recipients_counter = Counter()
+        
+        for num in sent_message_numbers:
+            try:
+                _, sent_msg_data = mail.fetch(num, &#39;(RFC822)&#39;)
+                sent_msg = message_from_bytes(sent_msg_data[0][1])
+                
+                result_dict[&#34;Bytes Sent&#34;] += get_message_size(sent_msg)
+                
+                date_str = sent_msg[&#34;Date&#34;]
+                timestamp = mktime_tz(parsedate_tz(date_str))
+                sent_time = datetime.utcfromtimestamp(timestamp).time()
+
+                if not (work_start_time &lt;= sent_time &lt;= work_end_time):
+                    result_dict[&#34;Messages Outside Working Hours&#34;] += 1
+
+                to_address = sent_msg.get(&#34;To&#34;, &#34;&#34;)
+                if to_address:
+                    recipients_counter.update(to_address.split(&#34;,&#34;))
+                    
+                cc_address = sent_msg.get(&#34;Cc&#34;, &#34;&#34;)
+                if cc_address:
+                    cc_recipients_counter.update(cc_address.split(&#34;,&#34;))
+
+                bcc_address = sent_msg.get(&#34;Bcc&#34;, &#34;&#34;)
+                if bcc_address:
+                    bcc_recipients_counter.update(bcc_address.split(&#34;,&#34;))
+                
+                if sent_msg.get(&#34;In-Reply-To&#34;) or sent_msg.get(&#34;References&#34;):
+                    result_dict[&#34;Replies to Messages&#34;] += 1
+                
+                subject = decode_header(sent_msg.get(&#34;Subject&#34;, &#34;&#34;))[0][0]
+                decoded_subject = subject.decode(&#34;utf-8&#34;) if isinstance(subject, bytes) else subject
+                text_content = get_text_content(sent_msg)
+                if sent_msg.is_multipart():
+                    for part in sent_msg.walk():
+                        if part.get_content_maintype() == &#39;multipart&#39;:
+                            continue
+                        if part.get(&#39;Content-Disposition&#39;) is not None:
+                            result_dict[&#34;Attachments in Sent Messages&#34;] += 1
+
+                result_dict[&#34;Characters in Outgoing Messages&#34;] += len(decoded_subject) + len(text_content)
+
+                
+            except Exception as e:
+                print(f&#34;Ошибка при получении данных для сообщения {num}: {e}&#34;)
+
+        result_dict[&#34;Recipients in Sent Messages&#34;] = len(recipients_counter)
+        result_dict[&#34;Bcc Recipients in Sent Messages&#34;] = len(bcc_recipients_counter)
+        result_dict[&#34;Cc Recipients in Sent Messages&#34;] = len(cc_recipients_counter)
+        
+
+        status, _ = mail.select(&#34;inbox&#34;)
+        if status != &#39;OK&#39;:
+            return handle_mailbox_error(&#39;inbox&#39;, status)
+        
+        received_result, received_data = mail.search(None, date_search_query)
+
+        if received_result != &#39;OK&#39;:
+            print(f&#34;Ошибка при поиске полученных сообщений: {received_result}&#34;)
+            return None
+        received_message_numbers = received_data[0].split()
+        result_dict[&#34;Received Messages&#34;] = len(received_message_numbers)
+        
+        for num in received_message_numbers:
+            try:
+                _, received_msg_data = mail.fetch(num, &#39;(RFC822)&#39;)
+                received_msg = message_from_bytes(received_msg_data[0][1])
+                
+                result_dict[&#34;Bytes Received&#34;] += get_message_size(received_msg)
+                
+                text_content = get_text_content(received_msg)
+
+                if text_content and &#39;?&#39; in text_content:
+                    if not received_msg.get(&#34;In-Reply-To&#34;) and not received_msg.get(&#34;References&#34;):
+                        result_dict[&#34;Unanswered Questions&#34;] += 1
+            except Exception as e:
+                print(f&#34;Ошибка при получении данных для сообщения {num}: {e}&#34;)
+
+        
+    return result_dict 
+
+
+def process_email_accounts( start_date_baseline,
+                            end_date_baseline,
+                            start_date_comparison,
+                            end_date_comparison,
+                            work_start_time, work_end_time,
+                            path_to_save, path_to_file):
+    &#34;&#34;&#34;
+    Обрабатывает учетные записи электронной почты и создает сводный отчет.
+
+    :param start_date_baseline: Начальная дата базового периода (строка формата &#39;ГГГГ-ММ-ДД&#39;).
+    :param end_date_baseline: Конечная дата базового периода (строка формата &#39;ГГГГ-ММ-ДД&#39;).
+    :param start_date_comparison: Начальная дата периода сравнения (строка формата &#39;ГГГГ-ММ-ДД&#39;).
+    :param end_date_comparison: Конечная дата периода сравнения (строка формата &#39;ГГГГ-ММ-ДД&#39;).
+    :param work_start_time: Начальное время рабочего дня (строка формата &#39;ЧЧ:ММ&#39;).
+    :param work_end_time: Конечное время рабочего дня (строка формата &#39;ЧЧ:ММ&#39;).
+    :param path_to_save: Путь для сохранения сводного отчета (строка).
+    :param path_to_file: Путь к файлу с логинами и паролями для электронной почты (строка).
+
+    :return: Список электронных адресов, для которых не удалось получить данные.
+    &#34;&#34;&#34;
+    
+    login_password_df = pd.read_csv(path_to_file)
+    bad_emails = []
+    
+    result_df = pd.DataFrame(columns=[
+        &#39;Email&#39;,
+        &#39;Sent Messages (Baseline)&#39;,
+        &#39;Received Messages (Baseline)&#39;,
+        &#39;Recipients in Sent Messages (Baseline)&#39;,
+        &#39;Bcc Recipients in Sent Messages (Baseline)&#39;,
+        &#39;Cc Recipients in Sent Messages (Baseline)&#39;,
+        &#39;Replies to Messages (Baseline)&#39;,
+        &#39;Characters in Outgoing Messages (Baseline)&#39;,
+        &#39;Messages Outside Working Hours (Baseline)&#39;,
+        &#39;Bytes Sent (Baseline)&#39;,
+        &#39;Bytes Received (Baseline)&#39;,
+        &#39;Unanswered Questions (Baseline)&#39;,
+        &#39;Attachments in Sent Messages (Baseline)&#39;,
+        &#39;Sent Messages (Comparison)&#39;,
+        &#39;Received Messages (Comparison)&#39;,
+        &#39;Recipients in Sent Messages (Comparison)&#39;,
+        &#39;Bcc Recipients in Sent Messages (Comparison)&#39;,
+        &#39;Cc Recipients in Sent Messages (Comparison)&#39;,
+        &#39;Replies to Messages (Comparison)&#39;,
+        &#39;Characters in Outgoing Messages (Comparison)&#39;,
+        &#39;Messages Outside Working Hours (Comparison)&#39;,
+        &#39;Bytes Sent (Comparison)&#39;,
+        &#39;Bytes Received (Comparison)&#39;,
+        &#39;Unanswered Questions (Comparison)&#39;,
+        &#39;Attachments in Sent Messages (Comparison)&#39;
+    ])
+
+    for _, row in login_password_df.iterrows():
+        email_address = row[&#39;login&#39;]
+        password = row[&#39;password&#39;]
+
+        baseline_result = parse_email(  email_address,
+                                        password,
+                                        start_date_baseline,
+                                        end_date_baseline,
+                                        work_start_time,
+                                        work_end_time)
+
+        comparison_result = parse_email(email_address,
+                                        password,
+                                        start_date_comparison,
+                                        end_date_comparison,
+                                        work_start_time,
+                                        work_end_time)
+
+        if baseline_result is not None or comparison_result is not None:
+            result_df = pd.concat([result_df, pd.DataFrame({
+                &#39;Email&#39;: [email_address],
+                &#39;Sent Messages (Baseline)&#39;: baseline_result[&#34;Sent Messages&#34;],
+                &#39;Received Messages (Baseline)&#39;: baseline_result[&#34;Received Messages&#34;],
+                &#39;Recipients in Sent Messages (Baseline)&#39;: baseline_result[&#34;Recipients in Sent Messages&#34;],
+                &#39;Bcc Recipients in Sent Messages (Baseline)&#39;: baseline_result[&#34;Bcc Recipients in Sent Messages&#34;],
+                &#39;Cc Recipients in Sent Messages (Baseline)&#39;: baseline_result[&#34;Cc Recipients in Sent Messages&#34;],
+                &#39;Replies to Messages (Baseline)&#39;: baseline_result[&#34;Replies to Messages&#34;],
+                &#39;Characters in Outgoing Messages (Baseline)&#39;: baseline_result[&#34;Characters in Outgoing Messages&#34;],
+                &#39;Messages Outside Working Hours (Baseline)&#39;: baseline_result[&#34;Messages Outside Working Hours&#34;],
+                &#34;Bytes Sent (Baseline)&#34;: baseline_result[&#34;Bytes Sent&#34;],
+                &#34;Bytes Received (Baseline)&#34;: baseline_result[&#34;Bytes Received&#34;],
+                &#39;Unanswered Questions (Baseline)&#39;: baseline_result[&#34;Unanswered Questions&#34;],
+                &#39;Attachments in Sent Messages (Baseline)&#39; : baseline_result[&#34;Attachments in Sent Messages&#34;],
+
+                &#39;Sent Messages (Comparison)&#39;: comparison_result[&#34;Sent Messages&#34;],
+                &#39;Received Messages (Comparison)&#39;: comparison_result[&#34;Received Messages&#34;],
+                &#39;Recipients in Sent Messages (Comparison)&#39;: comparison_result[&#34;Recipients in Sent Messages&#34;],
+                &#39;Bcc Recipients in Sent Messages (Comparison)&#39;: comparison_result[&#34;Bcc Recipients in Sent Messages&#34;],
+                &#39;Cc Recipients in Sent Messages (Comparison)&#39;: comparison_result[&#34;Cc Recipients in Sent Messages&#34;],
+                &#39;Replies to Messages (Comparison)&#39;: comparison_result[&#34;Replies to Messages&#34;],
+                &#39;Characters in Outgoing Messages (Comparison)&#39;: comparison_result[&#34;Characters in Outgoing Messages&#34;],
+                &#39;Messages Outside Working Hours (Comparison)&#39;: comparison_result[&#34;Messages Outside Working Hours&#34;],
+                &#34;Bytes Sent (Comparison)&#34;: comparison_result[&#34;Bytes Sent&#34;],
+                &#34;Bytes Received (Comparison)&#34;: comparison_result[&#34;Bytes Received&#34;],
+                &#39;Unanswered Questions (Comparison)&#39;: comparison_result[&#34;Unanswered Questions&#34;],
+                &#39;Attachments in Sent Messages (Comparison)&#39; : comparison_result[&#34;Attachments in Sent Messages&#34;]
+                })], ignore_index=True)
+        else:
+            bad_emails.append(email_address)
+
+    result_df.to_csv(path_to_save, index=False)
+    return bad_emails</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="api.mail_parse.get_message_size"><code class="name flex">
+<span>def <span class="ident">get_message_size</span></span>(<span>msg)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Возвращает размер сообщения, включая его вложения.</p>
+<p>Parameters:
+- msg (email.message.Message): Объект сообщения.</p>
+<p>Returns:
+- int: Размер сообщения в байтах.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_message_size(msg):
+    &#34;&#34;&#34;
+    Возвращает размер сообщения, включая его вложения.
+
+    Parameters:
+    - msg (email.message.Message): Объект сообщения.
+
+    Returns:
+    - int: Размер сообщения в байтах.
+    &#34;&#34;&#34;
+    size = len(msg.as_bytes())
+    for part in msg.walk():
+        if part.get_payload(decode=True) is not None:
+            size += len(part.as_bytes())
+    return size</code></pre>
+</details>
+</dd>
+<dt id="api.mail_parse.get_text_content"><code class="name flex">
+<span>def <span class="ident">get_text_content</span></span>(<span>msg)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Извлекает текстовое содержимое из сообщения.</p>
+<p>Parameters:
+- msg (email.message.Message): Объект сообщения.</p>
+<p>Returns:
+- str: Текстовое содержимое сообщения.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_text_content(msg):
+    &#34;&#34;&#34;
+    Извлекает текстовое содержимое из сообщения.
+
+    Parameters:
+    - msg (email.message.Message): Объект сообщения.
+
+    Returns:
+    - str: Текстовое содержимое сообщения.
+    &#34;&#34;&#34;
+    if msg.is_multipart():
+        for part in msg.walk():
+            content_type = part.get_content_type()
+            if content_type == &#34;text/plain&#34;:
+                return part.get_payload(decode=True).decode(&#39;utf-8&#39;, &#39;ignore&#39;)
+    else:
+        return msg.get_payload(decode=True).decode(&#39;utf-8&#39;, &#39;ignore&#39;)</code></pre>
+</details>
+</dd>
+<dt id="api.mail_parse.handle_mailbox_error"><code class="name flex">
+<span>def <span class="ident">handle_mailbox_error</span></span>(<span>folder_name, status)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Обрабатывает ошибку выбора почтовой папки.</p>
+<p>Parameters:
+- folder_name (str): Имя папки.
+- status (str): Статус ошибки.</p>
+<p>Returns:
+- None</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def handle_mailbox_error(folder_name, status):
+    &#34;&#34;&#34;
+    Обрабатывает ошибку выбора почтовой папки.
+
+    Parameters:
+    - folder_name (str): Имя папки.
+    - status (str): Статус ошибки.
+
+    Returns:
+    - None
+    &#34;&#34;&#34;
+    print(f&#34;Не удалось выбрать папку &#39;{folder_name}&#39;. Код ошибки: {status}&#34;)
+    return None</code></pre>
+</details>
+</dd>
+<dt id="api.mail_parse.parse_email"><code class="name flex">
+<span>def <span class="ident">parse_email</span></span>(<span>email_address, password, start_date, end_date, work_start_time, work_end_time)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Анализирует электронную почту пользователя и возвращает статистику использования.</p>
+<p>Parameters:
+- email_address (str): Адрес электронной почты пользователя.
+- password (str): Пароль для доступа к электронной почте.
+- start_date (datetime): Начальная дата для анализа сообщений.
+- end_date (datetime): Конечная дата для анализа сообщений.
+- work_start_time (datetime.time): Начальное время рабочего дня.
+- work_end_time (datetime.time): Конечное время рабочего дня.</p>
+<p>Returns:
+- dict: Словарь с результатами анализа электронной почты.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def parse_email(email_address, password, start_date, end_date, work_start_time, work_end_time):
+    &#34;&#34;&#34;
+    Анализирует электронную почту пользователя и возвращает статистику использования.
+
+    Parameters:
+    - email_address (str): Адрес электронной почты пользователя.
+    - password (str): Пароль для доступа к электронной почте.
+    - start_date (datetime): Начальная дата для анализа сообщений.
+    - end_date (datetime): Конечная дата для анализа сообщений.
+    - work_start_time (datetime.time): Начальное время рабочего дня.
+    - work_end_time (datetime.time): Конечное время рабочего дня.
+
+    Returns:
+    - dict: Словарь с результатами анализа электронной почты.
+    &#34;&#34;&#34;
+    result_dict = {
+        &#34;Email&#34;: email_address,
+        &#34;Sent Messages&#34;: 0,
+        &#34;Received Messages&#34;: 0,
+        &#34;Recipients in Sent Messages&#34;: 0,
+        &#34;Bcc Recipients in Sent Messages&#34;: 0,
+        &#34;Cc Recipients in Sent Messages&#34;: 0,
+        &#34;Replies to Messages&#34;: 0,
+        &#34;Characters in Outgoing Messages&#34;: 0,
+        &#34;Messages Outside Working Hours&#34;: 0,
+        &#34;Bytes Sent&#34; : 0,
+        &#34;Bytes Received&#34;: 0,
+        &#34;Unanswered Questions&#34;: 0,
+        &#34;Attachments in Sent Messages&#34;: 0,
+    }
+
+    with imaplib.IMAP4_SSL(&#34;imap.gmail.com&#34;) as mail:
+        mail.login(email_address, password)
+        
+        start_date_str = start_date.strftime(&#34;%d-%b-%Y&#34;)
+        end_date_str = end_date.strftime(&#34;%d-%b-%Y&#34;)
+
+        date_search_query = f&#39;(SINCE &#34;{start_date_str}&#34; BEFORE &#34;{end_date_str}&#34;)&#39;
+
+        status, _ = mail.select(&#39;[Gmail]/&amp;BB4EQgQ,BEAEMAQyBDsENQQ9BD0ESwQ1-&#39;) #Sent
+        if status != &#39;OK&#39;:
+            return handle_mailbox_error(&#39;Sent&#39;, status)
+        
+        sent_result, sent_data = mail.search(None, date_search_query)
+        
+        if sent_result != &#39;OK&#39;:
+            print(f&#34;Ошибка при поиске отправленных сообщений: {sent_result}&#34;)
+            return None
+        sent_message_numbers = sent_data[0].split()
+        result_dict[&#34;Sent Messages&#34;] = len(sent_message_numbers)
+
+        recipients_counter = Counter()
+        bcc_recipients_counter = Counter()
+        cc_recipients_counter = Counter()
+        
+        for num in sent_message_numbers:
+            try:
+                _, sent_msg_data = mail.fetch(num, &#39;(RFC822)&#39;)
+                sent_msg = message_from_bytes(sent_msg_data[0][1])
+                
+                result_dict[&#34;Bytes Sent&#34;] += get_message_size(sent_msg)
+                
+                date_str = sent_msg[&#34;Date&#34;]
+                timestamp = mktime_tz(parsedate_tz(date_str))
+                sent_time = datetime.utcfromtimestamp(timestamp).time()
+
+                if not (work_start_time &lt;= sent_time &lt;= work_end_time):
+                    result_dict[&#34;Messages Outside Working Hours&#34;] += 1
+
+                to_address = sent_msg.get(&#34;To&#34;, &#34;&#34;)
+                if to_address:
+                    recipients_counter.update(to_address.split(&#34;,&#34;))
+                    
+                cc_address = sent_msg.get(&#34;Cc&#34;, &#34;&#34;)
+                if cc_address:
+                    cc_recipients_counter.update(cc_address.split(&#34;,&#34;))
+
+                bcc_address = sent_msg.get(&#34;Bcc&#34;, &#34;&#34;)
+                if bcc_address:
+                    bcc_recipients_counter.update(bcc_address.split(&#34;,&#34;))
+                
+                if sent_msg.get(&#34;In-Reply-To&#34;) or sent_msg.get(&#34;References&#34;):
+                    result_dict[&#34;Replies to Messages&#34;] += 1
+                
+                subject = decode_header(sent_msg.get(&#34;Subject&#34;, &#34;&#34;))[0][0]
+                decoded_subject = subject.decode(&#34;utf-8&#34;) if isinstance(subject, bytes) else subject
+                text_content = get_text_content(sent_msg)
+                if sent_msg.is_multipart():
+                    for part in sent_msg.walk():
+                        if part.get_content_maintype() == &#39;multipart&#39;:
+                            continue
+                        if part.get(&#39;Content-Disposition&#39;) is not None:
+                            result_dict[&#34;Attachments in Sent Messages&#34;] += 1
+
+                result_dict[&#34;Characters in Outgoing Messages&#34;] += len(decoded_subject) + len(text_content)
+
+                
+            except Exception as e:
+                print(f&#34;Ошибка при получении данных для сообщения {num}: {e}&#34;)
+
+        result_dict[&#34;Recipients in Sent Messages&#34;] = len(recipients_counter)
+        result_dict[&#34;Bcc Recipients in Sent Messages&#34;] = len(bcc_recipients_counter)
+        result_dict[&#34;Cc Recipients in Sent Messages&#34;] = len(cc_recipients_counter)
+        
+
+        status, _ = mail.select(&#34;inbox&#34;)
+        if status != &#39;OK&#39;:
+            return handle_mailbox_error(&#39;inbox&#39;, status)
+        
+        received_result, received_data = mail.search(None, date_search_query)
+
+        if received_result != &#39;OK&#39;:
+            print(f&#34;Ошибка при поиске полученных сообщений: {received_result}&#34;)
+            return None
+        received_message_numbers = received_data[0].split()
+        result_dict[&#34;Received Messages&#34;] = len(received_message_numbers)
+        
+        for num in received_message_numbers:
+            try:
+                _, received_msg_data = mail.fetch(num, &#39;(RFC822)&#39;)
+                received_msg = message_from_bytes(received_msg_data[0][1])
+                
+                result_dict[&#34;Bytes Received&#34;] += get_message_size(received_msg)
+                
+                text_content = get_text_content(received_msg)
+
+                if text_content and &#39;?&#39; in text_content:
+                    if not received_msg.get(&#34;In-Reply-To&#34;) and not received_msg.get(&#34;References&#34;):
+                        result_dict[&#34;Unanswered Questions&#34;] += 1
+            except Exception as e:
+                print(f&#34;Ошибка при получении данных для сообщения {num}: {e}&#34;)
+
+        
+    return result_dict </code></pre>
+</details>
+</dd>
+<dt id="api.mail_parse.process_email_accounts"><code class="name flex">
+<span>def <span class="ident">process_email_accounts</span></span>(<span>start_date_baseline, end_date_baseline, start_date_comparison, end_date_comparison, work_start_time, work_end_time, path_to_save, path_to_file)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Обрабатывает учетные записи электронной почты и создает сводный отчет.</p>
+<p>:param start_date_baseline: Начальная дата базового периода (строка формата 'ГГГГ-ММ-ДД').
+:param end_date_baseline: Конечная дата базового периода (строка формата 'ГГГГ-ММ-ДД').
+:param start_date_comparison: Начальная дата периода сравнения (строка формата 'ГГГГ-ММ-ДД').
+:param end_date_comparison: Конечная дата периода сравнения (строка формата 'ГГГГ-ММ-ДД').
+:param work_start_time: Начальное время рабочего дня (строка формата 'ЧЧ:ММ').
+:param work_end_time: Конечное время рабочего дня (строка формата 'ЧЧ:ММ').
+:param path_to_save: Путь для сохранения сводного отчета (строка).
+:param path_to_file: Путь к файлу с логинами и паролями для электронной почты (строка).</p>
+<p>:return: Список электронных адресов, для которых не удалось получить данные.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def process_email_accounts( start_date_baseline,
+                            end_date_baseline,
+                            start_date_comparison,
+                            end_date_comparison,
+                            work_start_time, work_end_time,
+                            path_to_save, path_to_file):
+    &#34;&#34;&#34;
+    Обрабатывает учетные записи электронной почты и создает сводный отчет.
+
+    :param start_date_baseline: Начальная дата базового периода (строка формата &#39;ГГГГ-ММ-ДД&#39;).
+    :param end_date_baseline: Конечная дата базового периода (строка формата &#39;ГГГГ-ММ-ДД&#39;).
+    :param start_date_comparison: Начальная дата периода сравнения (строка формата &#39;ГГГГ-ММ-ДД&#39;).
+    :param end_date_comparison: Конечная дата периода сравнения (строка формата &#39;ГГГГ-ММ-ДД&#39;).
+    :param work_start_time: Начальное время рабочего дня (строка формата &#39;ЧЧ:ММ&#39;).
+    :param work_end_time: Конечное время рабочего дня (строка формата &#39;ЧЧ:ММ&#39;).
+    :param path_to_save: Путь для сохранения сводного отчета (строка).
+    :param path_to_file: Путь к файлу с логинами и паролями для электронной почты (строка).
+
+    :return: Список электронных адресов, для которых не удалось получить данные.
+    &#34;&#34;&#34;
+    
+    login_password_df = pd.read_csv(path_to_file)
+    bad_emails = []
+    
+    result_df = pd.DataFrame(columns=[
+        &#39;Email&#39;,
+        &#39;Sent Messages (Baseline)&#39;,
+        &#39;Received Messages (Baseline)&#39;,
+        &#39;Recipients in Sent Messages (Baseline)&#39;,
+        &#39;Bcc Recipients in Sent Messages (Baseline)&#39;,
+        &#39;Cc Recipients in Sent Messages (Baseline)&#39;,
+        &#39;Replies to Messages (Baseline)&#39;,
+        &#39;Characters in Outgoing Messages (Baseline)&#39;,
+        &#39;Messages Outside Working Hours (Baseline)&#39;,
+        &#39;Bytes Sent (Baseline)&#39;,
+        &#39;Bytes Received (Baseline)&#39;,
+        &#39;Unanswered Questions (Baseline)&#39;,
+        &#39;Attachments in Sent Messages (Baseline)&#39;,
+        &#39;Sent Messages (Comparison)&#39;,
+        &#39;Received Messages (Comparison)&#39;,
+        &#39;Recipients in Sent Messages (Comparison)&#39;,
+        &#39;Bcc Recipients in Sent Messages (Comparison)&#39;,
+        &#39;Cc Recipients in Sent Messages (Comparison)&#39;,
+        &#39;Replies to Messages (Comparison)&#39;,
+        &#39;Characters in Outgoing Messages (Comparison)&#39;,
+        &#39;Messages Outside Working Hours (Comparison)&#39;,
+        &#39;Bytes Sent (Comparison)&#39;,
+        &#39;Bytes Received (Comparison)&#39;,
+        &#39;Unanswered Questions (Comparison)&#39;,
+        &#39;Attachments in Sent Messages (Comparison)&#39;
+    ])
+
+    for _, row in login_password_df.iterrows():
+        email_address = row[&#39;login&#39;]
+        password = row[&#39;password&#39;]
+
+        baseline_result = parse_email(  email_address,
+                                        password,
+                                        start_date_baseline,
+                                        end_date_baseline,
+                                        work_start_time,
+                                        work_end_time)
+
+        comparison_result = parse_email(email_address,
+                                        password,
+                                        start_date_comparison,
+                                        end_date_comparison,
+                                        work_start_time,
+                                        work_end_time)
+
+        if baseline_result is not None or comparison_result is not None:
+            result_df = pd.concat([result_df, pd.DataFrame({
+                &#39;Email&#39;: [email_address],
+                &#39;Sent Messages (Baseline)&#39;: baseline_result[&#34;Sent Messages&#34;],
+                &#39;Received Messages (Baseline)&#39;: baseline_result[&#34;Received Messages&#34;],
+                &#39;Recipients in Sent Messages (Baseline)&#39;: baseline_result[&#34;Recipients in Sent Messages&#34;],
+                &#39;Bcc Recipients in Sent Messages (Baseline)&#39;: baseline_result[&#34;Bcc Recipients in Sent Messages&#34;],
+                &#39;Cc Recipients in Sent Messages (Baseline)&#39;: baseline_result[&#34;Cc Recipients in Sent Messages&#34;],
+                &#39;Replies to Messages (Baseline)&#39;: baseline_result[&#34;Replies to Messages&#34;],
+                &#39;Characters in Outgoing Messages (Baseline)&#39;: baseline_result[&#34;Characters in Outgoing Messages&#34;],
+                &#39;Messages Outside Working Hours (Baseline)&#39;: baseline_result[&#34;Messages Outside Working Hours&#34;],
+                &#34;Bytes Sent (Baseline)&#34;: baseline_result[&#34;Bytes Sent&#34;],
+                &#34;Bytes Received (Baseline)&#34;: baseline_result[&#34;Bytes Received&#34;],
+                &#39;Unanswered Questions (Baseline)&#39;: baseline_result[&#34;Unanswered Questions&#34;],
+                &#39;Attachments in Sent Messages (Baseline)&#39; : baseline_result[&#34;Attachments in Sent Messages&#34;],
+
+                &#39;Sent Messages (Comparison)&#39;: comparison_result[&#34;Sent Messages&#34;],
+                &#39;Received Messages (Comparison)&#39;: comparison_result[&#34;Received Messages&#34;],
+                &#39;Recipients in Sent Messages (Comparison)&#39;: comparison_result[&#34;Recipients in Sent Messages&#34;],
+                &#39;Bcc Recipients in Sent Messages (Comparison)&#39;: comparison_result[&#34;Bcc Recipients in Sent Messages&#34;],
+                &#39;Cc Recipients in Sent Messages (Comparison)&#39;: comparison_result[&#34;Cc Recipients in Sent Messages&#34;],
+                &#39;Replies to Messages (Comparison)&#39;: comparison_result[&#34;Replies to Messages&#34;],
+                &#39;Characters in Outgoing Messages (Comparison)&#39;: comparison_result[&#34;Characters in Outgoing Messages&#34;],
+                &#39;Messages Outside Working Hours (Comparison)&#39;: comparison_result[&#34;Messages Outside Working Hours&#34;],
+                &#34;Bytes Sent (Comparison)&#34;: comparison_result[&#34;Bytes Sent&#34;],
+                &#34;Bytes Received (Comparison)&#34;: comparison_result[&#34;Bytes Received&#34;],
+                &#39;Unanswered Questions (Comparison)&#39;: comparison_result[&#34;Unanswered Questions&#34;],
+                &#39;Attachments in Sent Messages (Comparison)&#39; : comparison_result[&#34;Attachments in Sent Messages&#34;]
+                })], ignore_index=True)
+        else:
+            bad_emails.append(email_address)
+
+    result_df.to_csv(path_to_save, index=False)
+    return bad_emails</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="api" href="index.html">api</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="api.mail_parse.get_message_size" href="#api.mail_parse.get_message_size">get_message_size</a></code></li>
+<li><code><a title="api.mail_parse.get_text_content" href="#api.mail_parse.get_text_content">get_text_content</a></code></li>
+<li><code><a title="api.mail_parse.handle_mailbox_error" href="#api.mail_parse.handle_mailbox_error">handle_mailbox_error</a></code></li>
+<li><code><a title="api.mail_parse.parse_email" href="#api.mail_parse.parse_email">parse_email</a></code></li>
+<li><code><a title="api.mail_parse.process_email_accounts" href="#api.mail_parse.process_email_accounts">process_email_accounts</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

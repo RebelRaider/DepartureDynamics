@@ -1,0 +1,1370 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>api.controller API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>api.controller</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from fastapi import APIRouter, Request, UploadFile, File
+from datetime import datetime, time
+from pydantic import EmailStr
+
+from api import schemas, exceptions, utils, service
+from api.models import User, UserModels, UserHistory, UserParseHistory, FeedBack
+
+import os
+from api.inference_catboost import train_catboost, optimize_catboost, inference_catboost  
+from api.mail_parse import process_email_accounts
+from ormar import QuerySet
+
+controller = APIRouter()
+
+model_exc = &#39;ckpt&#39;
+
+async def generate_save_path(filename, user: User) -&gt; str:
+    &#34;&#34;&#34;
+    Генерирует и возвращает полный путь для сохранения файла, связанного с пользователем.
+
+    Parameters:
+    - filename (str): Имя файла, который требуется сохранить.
+    - user (User): Объект пользователя, для которого генерируется путь.
+
+    Returns:
+    - str: Полный путь для сохранения файла.
+    &#34;&#34;&#34;  
+    return os.path.join(await user.get_user_folder(), &#39;train_files&#39;, filename)
+
+
+@controller.post(&#39;/user/auth/sign-up&#39;)
+async def sign_up(request: Request,
+                  username: str = &#39;username&#39;,
+                  first_name: str =&#39;first_name&#39;,
+                  last_name: str = &#39;last_name&#39;,
+                  email: EmailStr =&#39;email@email.email&#39;,
+                  password: str=&#39;password&#39;) -&gt; schemas.SignUpReturn | dict:
+    &#34;&#34;&#34;
+    Регистрирует нового пользователя.
+
+    Parameters:
+    - request (Request): Объект запроса FastAPI.
+    - username (str): Имя пользователя.
+    - first_name (str): Имя пользователя.
+    - last_name (str): Фамилия пользователя.
+    - email (EmailStr): Электронная почта пользователя.
+    - password (str): Пароль пользователя.
+
+    Returns:
+    - SignUpReturn | dict: Возвращает данные о результате регистрации или словарь с ошибкой.
+    &#34;&#34;&#34;  
+    return await service.create_user(username, first_name, last_name, email, password)
+    
+    
+@controller.post(&#39;/user/auth/sign-in&#39;)
+async def sign_in(request: Request, email: EmailStr =&#39;email@email.email&#39;,
+                  password: str=&#39;password&#39;) -&gt; schemas.SignInReturn | dict:
+    &#34;&#34;&#34;
+    Авторизует пользователя.
+
+    Parameters:
+    - request (Request): Объект запроса FastAPI.
+    - email (EmailStr): Электронная почта пользователя.
+    - password (str): Пароль пользователя.
+
+    Returns:
+    - SignInReturn | dict: Возвращает данные о результате авторизации или словарь с ошибкой.
+    &#34;&#34;&#34;  
+    return await service.sign_in(email, password)
+
+
+@controller.post(&#39;/user/reset_password&#39;)
+async def reset_password(request: Request,
+                         token:str,
+                         old: str,
+                         new: str) -&gt; schemas.ResetPasswordReturn | dict:
+    &#34;&#34;&#34;
+    Сбрасывает пароль пользователя.
+
+    Parameters:
+    - request (Request): Объект запроса FastAPI.
+    - token (str): Токен пользователя для сброса пароля.
+    - old (str): Старый пароль пользователя.
+    - new (str): Новый пароль пользователя.
+
+    Returns:
+    - ResetPasswordReturn | dict: Возвращает данные о результате сброса пароля или словарь с ошибкой.
+    &#34;&#34;&#34;  
+    user: User = await utils.get_user_from_token(token, User)
+    return await service.reset_password(user, old, new)
+
+
+@controller.post(&#39;/ml/new_model/train&#39;)
+async def new_model_train(request: Request,
+                          token: str,
+                          model_name: str,
+                          file: UploadFile = File(...))-&gt; schemas.ModelReturn | dict:
+    &#34;&#34;&#34;
+    Обучает новую модель на основе загруженного CSV-файла.
+
+    Parameters:
+    - request (Request): Объект запроса FastAPI.
+    - token (str): Токен пользователя для аутентификации.
+    - model_name (str): Имя новой модели.
+    - file (UploadFile): Загруженный CSV-файл для обучения.
+
+    Returns:
+    - ModelReturn | dict: Возвращает данные о результате обучения модели или словарь с ошибкой.
+    &#34;&#34;&#34;  
+    if await utils.check_model_name(model_name, UserModels):
+        return exceptions.new_model_conflict_name
+    if not await utils.check_file_expansion(file.filename, &#39;csv&#39;):
+        return exceptions.wrong_file_type
+    
+    user: User = await utils.get_user_from_token(token, User)
+    save_to: str = await generate_save_path(file.filename, user)
+    model_path: str = os.path.join(await user.get_user_folder(), &#39;models&#39;)
+    
+    with open(save_to, &#39;wb&#39;) as f:
+        f.write(file.file.read())
+    
+    await service.create_new_model(user, save_to, model_name, model_path)
+    
+    train_catboost(save_to, os.path.join(model_path, model_name))
+    
+    return {
+        &#39;status&#39; : True
+    }
+    
+    
+@controller.post(&#39;/ml/new_model/optimize&#39;)
+async def new_model_optimize(request: Request,
+                             token: str,
+                             model_name: str,
+                             file: UploadFile = File(...)) -&gt; schemas.ModelReturn | dict:
+    &#34;&#34;&#34;
+    Оптимизирует новую модель на основе загруженного CSV-файла.
+
+    Parameters:
+    - request (Request): Объект запроса FastAPI.
+    - token (str): Токен пользователя для аутентификации.
+    - model_name (str): Имя новой модели.
+    - file (UploadFile): Загруженный CSV-файл для оптимизации.
+
+    Returns:
+    - ModelReturn | dict: Возвращает данные о результате оптимизации модели или словарь с ошибкой.
+    &#34;&#34;&#34;  
+    if await utils.check_model_name(model_name, UserModels):
+        raise exceptions.new_model_conflict_name
+    if not await utils.check_file_expansion(file.filename, &#39;csv&#39;):
+        return exceptions.wrong_file_type
+    user: User = await utils.get_user_from_token(token, User)
+    save_to: str = await generate_save_path(file.filename, user)
+    model_path: str = os.path.join(await user.get_user_folder(), &#39;models&#39;)
+    
+    with open(save_to, &#39;wb&#39;) as f:
+        f.write(file.file.read())
+    
+    await service.create_new_model(user, save_to, model_name, model_path, mode=&#39;optimize&#39;)
+    
+    
+    optimize_catboost(save_to, os.path.join(model_path, model_name))
+    
+    return {
+        &#39;status&#39; : True
+    }
+
+
+@controller.post(&#39;/inference&#39;)
+async def inference(request: Request,
+                    token: str,
+                    model_name: str,
+                    predict_name: str,
+                    file: UploadFile = File(...)) -&gt; schemas.InferenceReturn:
+    &#34;&#34;&#34;
+    Выполняет инференс (предсказание) на новых данных с использованием заданной модели.
+
+    Parameters:
+    - request (Request): Объект запроса FastAPI.
+    - token (str): Токен пользователя для аутентификации.
+    - model_name (str): Имя модели, которую необходимо использовать для инференса.
+    - predict_name (str): Имя для сохранения результата инференса.
+    - file (UploadFile): Загруженный CSV-файл для выполнения предсказания.
+
+    Returns:
+    - InferenceReturn: Возвращает данные о результате инференса.
+    &#34;&#34;&#34;
+    if await utils.check_predict_name(predict_name, UserHistory):
+        raise exceptions.new_predict_conflict_name
+    if not await utils.check_file_expansion(file.filename, &#39;csv&#39;):
+        return exceptions.wrong_file_type
+
+    user: User = await utils.get_user_from_token(token, User)
+    model: str = await UserModels.objects.get(model_name=model_name)
+    save_to: str = os.path.join(await user.get_user_folder(), &#39;predict_files&#39;, file.filename)
+
+    with open(save_to, &#39;wb&#39;) as f:
+        f.write(file.file.read())
+
+    inference_catboost(
+        save_to,
+        os.path.join(model.model_path, model_name),
+        os.path.join(
+            await user.get_user_folder(),
+            &#39;predictions&#39;,
+            predict_name
+        )
+    )
+
+    await service.inference(user, save_to, predict_name)
+
+    return {
+        &#39;result&#39;: &#39;/&#39; + os.path.join(
+            await user.get_user_folder(),
+            &#39;predictions&#39;,
+            predict_name
+        ) + &#39;.csv&#39;
+    }
+
+
+@controller.get(&#39;/me&#39;)
+async def me(request: Request, token: str) -&gt; schemas.MeReturn | dict:
+    &#34;&#34;&#34;
+    Получает информацию о текущем пользователе.
+
+    Parameters:
+    - request (Request): Объект запроса FastAPI.
+    - token (str): Токен пользователя для аутентификации.
+
+    Returns:
+    - MeReturn | dict: Возвращает данные о текущем пользователе или словарь с ошибкой.
+    &#34;&#34;&#34;
+    user: User = await utils.get_user_from_token(token, User)
+    return await user.json()
+
+
+@controller.get(&#39;/model&#39;)
+async def models(request: Request, token: str) -&gt; schemas.GetModelReturn | dict:
+    &#34;&#34;&#34;
+    Получает информацию о моделях пользователя.
+
+    Parameters:
+    - request (Request): Объект запроса FastAPI.
+    - token (str): Токен пользователя для аутентификации.
+
+    Returns:
+    - GetModelReturn | dict: Возвращает данные о моделях пользователя или словарь с ошибкой.
+    &#34;&#34;&#34;
+    user: User = await utils.get_user_from_token(token, User)
+    user_models: QuerySet = UserModels.objects.filter(user_id=user.id)
+
+    data: list = []
+    for model in await user_models.all():
+        data.append(await model.json())
+
+    return {
+        &#39;models&#39;: data
+    }
+
+
+@controller.get(&#39;/predict&#39;)
+async def my_predicts(request: Request, token: str) -&gt; schemas.PredictReturn | dict:
+    &#34;&#34;&#34;
+    Получает информацию о предсказаниях пользователя.
+
+    Parameters:
+    - request (Request): Объект запроса FastAPI.
+    - token (str): Токен пользователя для аутентификации.
+
+    Returns:
+    - PredictReturn | dict: Возвращает данные о предсказаниях пользователя или словарь с ошибкой.
+    &#34;&#34;&#34;
+    user: User = await utils.get_user_from_token(token, User)
+    history: QuerySet = await UserHistory.objects.filter(user_id=user.id).all()
+
+    data: list = []
+    for h in history:
+        data.append(await h.json())
+
+    return {
+        &#39;predicts&#39;: data
+    }
+
+
+@controller.delete(&#39;/model/delete&#39;)
+async def delete_model(request: Request,
+                       token: str,
+                       model_name: str) -&gt; schemas.GetModelReturn | dict:
+    &#34;&#34;&#34;
+    Удаляет модель пользователя.
+
+    Parameters:
+    - request (Request): Объект запроса FastAPI.
+    - token (str): Токен пользователя для аутентификации.
+    - model_name (str): Имя модели, которую необходимо удалить.
+
+    Returns:
+    - GetModelReturn | dict: Возвращает данные о моделях пользователя после удаления или словарь с ошибкой.
+    &#34;&#34;&#34;
+    user: User = await utils.get_user_from_token(token, User)
+    model: QuerySet = await UserModels.objects.get(model_name=model_name)
+
+    if model.user_id == user.id:
+        delete_path: str = f&#34;{model.model_path}/{model.model_name}.{model_exc}&#34;
+        os.remove(delete_path)
+        await model.delete()
+
+    return await models(request, token)
+
+
+@controller.delete(&#39;/predict/delete&#39;)
+async def delete_prediction(request: Request,
+                            token: str,
+                            predict_name: str) -&gt; schemas.PredictReturn | dict:
+    &#34;&#34;&#34;
+    Удаляет предсказание пользователя.
+
+    Parameters:
+    - request (Request): Объект запроса FastAPI.
+    - token (str): Токен пользователя для аутентификации.
+    - predict_name (str): Имя предсказания, которое необходимо удалить.
+
+    Returns:
+    - PredictReturn | dict: Возвращает данные о предсказаниях пользователя после удаления или словарь с ошибкой.
+    &#34;&#34;&#34;
+    user: User = await utils.get_user_from_token(token, User)
+    predict: QuerySet = await UserHistory.objects.get(predict_name=predict_name)
+
+    if predict.user_id == user.id:
+        delete_path: str = predict.prediction + &#39;.csv&#39;
+        os.remove(delete_path)
+        await predict.delete()
+
+    return await my_predicts(request, token)
+
+
+@controller.post(&#39;/mail/parse&#39;)
+async def parse_mail_controller(request: Request,
+                                token: str,
+                                start_date_baseline: datetime,
+                                end_date_baseline: datetime,
+                                start_date_comparison: datetime,
+                                end_date_comparison: datetime,
+                                work_start_time_hours: int,
+                                work_start_time_minutes: int,
+                                work_end_time_hours: int,
+                                work_end_time_minutes: int,
+                                path_to_save: str,
+                                file: UploadFile = File(...)) -&gt; schemas.ParseMailReturn | dict:
+    &#34;&#34;&#34;
+    Выполняет парсинг электронных писем и сохраняет результаты в CSV-файл.
+
+    Parameters:
+    - request (Request): Объект запроса FastAPI.
+    - token (str): Токен пользователя для аутентификации.
+    - start_date_baseline (datetime): Начальная дата базового периода для парсинга.
+    - end_date_baseline (datetime): Конечная дата базового периода для парсинга.
+    - start_date_comparison (datetime): Начальная дата периода для сравнения.
+    - end_date_comparison (datetime): Конечная дата периода для сравнения.
+    - work_start_time_hours (int): Час начала рабочего времени.
+    - work_start_time_minutes (int): Минута начала рабочего времени.
+    - work_end_time_hours (int): Час окончания рабочего времени.
+    - work_end_time_minutes (int): Минута окончания рабочего времени.
+    - path_to_save (str): Путь для сохранения результатов парсинга.
+    - file (UploadFile): Загруженный CSV-файл с данными для парсинга.
+
+    Returns:
+    - ParseMailReturn | dict: Возвращает данные о сохраненном файле и списке некорректных электронных почт.
+    &#34;&#34;&#34;
+    user: User = await utils.get_user_from_token(token, User)
+
+    save_to: str = os.path.join(await user.get_user_folder(), &#39;data_for_parse&#39;, file.filename)
+    path_to_save: str = os.path.join(await user.get_user_folder(), &#39;data_from_parse&#39;, path_to_save + &#39;.csv&#39;)
+
+    if await utils.check_mail_parse(path_to_save, UserParseHistory, user.id):
+        return exceptions.new_parse_mail_conflict_name
+    if not await utils.check_file_expansion(file.filename, &#39;csv&#39;):
+        return exceptions.wrong_file_type
+
+    with open(save_to, &#39;wb&#39;) as f:
+        f.write(file.file.read())
+
+    await service.parse_mail(
+        start_date_baseline=start_date_baseline,
+        end_date_baseline=end_date_baseline,
+        start_date_comparison=start_date_comparison,
+        end_date_comparison=end_date_comparison,
+        work_start_time_hours=work_start_time_hours,
+        work_start_time_minutes=work_start_time_minutes,
+        work_end_time_hours=work_end_time_hours,
+        work_end_time_minutes=work_end_time_minutes,
+        data_path=path_to_save,
+        save_to=save_to,
+        user=user
+    )
+
+    res = process_email_accounts(
+        start_date_baseline=start_date_baseline,
+        end_date_baseline=end_date_baseline,
+        start_date_comparison=start_date_comparison,
+        end_date_comparison=end_date_comparison,
+        work_start_time=time(work_end_time_hours, work_start_time_minutes),
+        work_end_time=time(work_end_time_hours, work_end_time_minutes),
+        path_to_file=save_to,
+        path_to_save=path_to_save
+    )
+
+    return {
+        &#39;file&#39;: path_to_save,
+        &#39;wrong_emails&#39;: res
+    }
+
+
+@controller.get(&#39;/history/mail&#39;)
+async def get_mail_parse(request: Request, token: str) -&gt; schemas.GetHistoryReturn | dict:
+    &#34;&#34;&#34;
+    Получает историю выполненных операций парсинга электронных писем пользователя.
+
+    Parameters:
+    - request (Request): Объект запроса FastAPI.
+    - token (str): Токен пользователя для аутентификации.
+
+    Returns:
+    - GetHistoryReturn | dict: Возвращает данные об истории парсинга электронных писем пользователя.
+    &#34;&#34;&#34;
+    user: User = await utils.get_user_from_token(token, User)
+
+    data: list = []
+    obj: QuerySet = await UserParseHistory.objects.filter(user_id=user.id).all()
+
+    for i in obj:
+        data.append(await i.json())
+
+    return {
+        &#39;result&#39;: data
+    }
+
+
+@controller.delete(&#39;/mail/delete&#39;)
+async def delete_mail_parse(request: Request, token: str, name: str) -&gt; schemas.DeleteHistoryReturn | dict:
+    &#34;&#34;&#34;
+    Удаляет запись об операции парсинга электронных писем пользователя.
+
+    Parameters:
+    - request (Request): Объект запроса FastAPI.
+    - token (str): Токен пользователя для аутентификации.
+    - name (str): Название записи об операции парсинга для удаления.
+
+    Returns:
+    - DeleteHistoryReturn | dict: Возвращает статус выполнения операции удаления.
+    &#34;&#34;&#34;
+    user: User = await utils.get_user_from_token(token, User)
+    data: QuerySet = await UserParseHistory.objects.all()
+
+    for dt in data:
+        if name in dt.data_path:
+            if dt.user_id == user.id:
+                await dt.delete()
+
+                return {
+                    &#39;status&#39;: True
+                }
+
+    return {
+        &#39;status&#39;: True
+    }
+
+
+@controller.get(&#39;/feedback&#39;)
+async def get_feedbacks(request: Request, token: str) -&gt; schemas.FeedBacks | dict:
+    &#34;&#34;&#34;
+    Получение обратной связи для администраторов.
+
+    Args:
+        request (Request): Объект запроса FastAPI.
+        token (str): Токен пользователя.
+
+    Returns:
+        FeedBacks | dict: Список обратной связи или словарь с ошибкой, если пользователь не является администратором.
+    &#34;&#34;&#34;
+    user: User = await utils.get_user_from_token(token, User)
+    if not user.is_admin:
+        return exceptions.user_is_not_admin
+    
+    return {&#39;feedbacks&#39;: [await item.json() for item in await FeedBack.objects.all()]}
+
+
+@controller.post(&#39;/feedback&#39;)
+async def create_feedback(request: Request, fio: str, email: str, message: str) -&gt; schemas.FeedBackCreateReturn | dict:
+    &#34;&#34;&#34;
+    Создание обратной связи.
+
+    Args:
+        request (Request): Объект запроса FastAPI.
+        fio (str): ФИО пользователя.
+        email (str): Электронная почта пользователя.
+        message (str): Сообщение пользователя.
+
+    Returns:
+        FeedBackCreateReturn | dict: Словарь с успешным статусом или словарь с ошибкой.
+    &#34;&#34;&#34;
+    feed = FeedBack(
+        user_fio=fio,
+        user_email=email,
+        user_message=message
+    )
+    feed.created_date = datetime.now()
+    await feed.save()
+    
+    return {
+        &#39;status&#39;: True
+    }
+    </code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="api.controller.create_feedback"><code class="name flex">
+<span>async def <span class="ident">create_feedback</span></span>(<span>request: starlette.requests.Request, fio: str, email: str, message: str) ‑> <a title="api.schemas.FeedBackCreateReturn" href="schemas.html#api.schemas.FeedBackCreateReturn">FeedBackCreateReturn</a> | dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Создание обратной связи.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>request</code></strong> :&ensp;<code>Request</code></dt>
+<dd>Объект запроса FastAPI.</dd>
+<dt><strong><code>fio</code></strong> :&ensp;<code>str</code></dt>
+<dd>ФИО пользователя.</dd>
+<dt><strong><code>email</code></strong> :&ensp;<code>str</code></dt>
+<dd>Электронная почта пользователя.</dd>
+<dt><strong><code>message</code></strong> :&ensp;<code>str</code></dt>
+<dd>Сообщение пользователя.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>FeedBackCreateReturn | dict: Словарь с успешным статусом или словарь с ошибкой.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@controller.post(&#39;/feedback&#39;)
+async def create_feedback(request: Request, fio: str, email: str, message: str) -&gt; schemas.FeedBackCreateReturn | dict:
+    &#34;&#34;&#34;
+    Создание обратной связи.
+
+    Args:
+        request (Request): Объект запроса FastAPI.
+        fio (str): ФИО пользователя.
+        email (str): Электронная почта пользователя.
+        message (str): Сообщение пользователя.
+
+    Returns:
+        FeedBackCreateReturn | dict: Словарь с успешным статусом или словарь с ошибкой.
+    &#34;&#34;&#34;
+    feed = FeedBack(
+        user_fio=fio,
+        user_email=email,
+        user_message=message
+    )
+    feed.created_date = datetime.now()
+    await feed.save()
+    
+    return {
+        &#39;status&#39;: True
+    }</code></pre>
+</details>
+</dd>
+<dt id="api.controller.delete_mail_parse"><code class="name flex">
+<span>async def <span class="ident">delete_mail_parse</span></span>(<span>request: starlette.requests.Request, token: str, name: str) ‑> <a title="api.schemas.DeleteHistoryReturn" href="schemas.html#api.schemas.DeleteHistoryReturn">DeleteHistoryReturn</a> | dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Удаляет запись об операции парсинга электронных писем пользователя.</p>
+<p>Parameters:
+- request (Request): Объект запроса FastAPI.
+- token (str): Токен пользователя для аутентификации.
+- name (str): Название записи об операции парсинга для удаления.</p>
+<p>Returns:
+- DeleteHistoryReturn | dict: Возвращает статус выполнения операции удаления.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@controller.delete(&#39;/mail/delete&#39;)
+async def delete_mail_parse(request: Request, token: str, name: str) -&gt; schemas.DeleteHistoryReturn | dict:
+    &#34;&#34;&#34;
+    Удаляет запись об операции парсинга электронных писем пользователя.
+
+    Parameters:
+    - request (Request): Объект запроса FastAPI.
+    - token (str): Токен пользователя для аутентификации.
+    - name (str): Название записи об операции парсинга для удаления.
+
+    Returns:
+    - DeleteHistoryReturn | dict: Возвращает статус выполнения операции удаления.
+    &#34;&#34;&#34;
+    user: User = await utils.get_user_from_token(token, User)
+    data: QuerySet = await UserParseHistory.objects.all()
+
+    for dt in data:
+        if name in dt.data_path:
+            if dt.user_id == user.id:
+                await dt.delete()
+
+                return {
+                    &#39;status&#39;: True
+                }
+
+    return {
+        &#39;status&#39;: True
+    }</code></pre>
+</details>
+</dd>
+<dt id="api.controller.delete_model"><code class="name flex">
+<span>async def <span class="ident">delete_model</span></span>(<span>request: starlette.requests.Request, token: str, model_name: str) ‑> <a title="api.schemas.GetModelReturn" href="schemas.html#api.schemas.GetModelReturn">GetModelReturn</a> | dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Удаляет модель пользователя.</p>
+<p>Parameters:
+- request (Request): Объект запроса FastAPI.
+- token (str): Токен пользователя для аутентификации.
+- model_name (str): Имя модели, которую необходимо удалить.</p>
+<p>Returns:
+- GetModelReturn | dict: Возвращает данные о моделях пользователя после удаления или словарь с ошибкой.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@controller.delete(&#39;/model/delete&#39;)
+async def delete_model(request: Request,
+                       token: str,
+                       model_name: str) -&gt; schemas.GetModelReturn | dict:
+    &#34;&#34;&#34;
+    Удаляет модель пользователя.
+
+    Parameters:
+    - request (Request): Объект запроса FastAPI.
+    - token (str): Токен пользователя для аутентификации.
+    - model_name (str): Имя модели, которую необходимо удалить.
+
+    Returns:
+    - GetModelReturn | dict: Возвращает данные о моделях пользователя после удаления или словарь с ошибкой.
+    &#34;&#34;&#34;
+    user: User = await utils.get_user_from_token(token, User)
+    model: QuerySet = await UserModels.objects.get(model_name=model_name)
+
+    if model.user_id == user.id:
+        delete_path: str = f&#34;{model.model_path}/{model.model_name}.{model_exc}&#34;
+        os.remove(delete_path)
+        await model.delete()
+
+    return await models(request, token)</code></pre>
+</details>
+</dd>
+<dt id="api.controller.delete_prediction"><code class="name flex">
+<span>async def <span class="ident">delete_prediction</span></span>(<span>request: starlette.requests.Request, token: str, predict_name: str) ‑> <a title="api.schemas.PredictReturn" href="schemas.html#api.schemas.PredictReturn">PredictReturn</a> | dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Удаляет предсказание пользователя.</p>
+<p>Parameters:
+- request (Request): Объект запроса FastAPI.
+- token (str): Токен пользователя для аутентификации.
+- predict_name (str): Имя предсказания, которое необходимо удалить.</p>
+<p>Returns:
+- PredictReturn | dict: Возвращает данные о предсказаниях пользователя после удаления или словарь с ошибкой.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@controller.delete(&#39;/predict/delete&#39;)
+async def delete_prediction(request: Request,
+                            token: str,
+                            predict_name: str) -&gt; schemas.PredictReturn | dict:
+    &#34;&#34;&#34;
+    Удаляет предсказание пользователя.
+
+    Parameters:
+    - request (Request): Объект запроса FastAPI.
+    - token (str): Токен пользователя для аутентификации.
+    - predict_name (str): Имя предсказания, которое необходимо удалить.
+
+    Returns:
+    - PredictReturn | dict: Возвращает данные о предсказаниях пользователя после удаления или словарь с ошибкой.
+    &#34;&#34;&#34;
+    user: User = await utils.get_user_from_token(token, User)
+    predict: QuerySet = await UserHistory.objects.get(predict_name=predict_name)
+
+    if predict.user_id == user.id:
+        delete_path: str = predict.prediction + &#39;.csv&#39;
+        os.remove(delete_path)
+        await predict.delete()
+
+    return await my_predicts(request, token)</code></pre>
+</details>
+</dd>
+<dt id="api.controller.generate_save_path"><code class="name flex">
+<span>async def <span class="ident">generate_save_path</span></span>(<span>filename, user: <a title="api.models.User" href="models.html#api.models.User">User</a>) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Генерирует и возвращает полный путь для сохранения файла, связанного с пользователем.</p>
+<p>Parameters:
+- filename (str): Имя файла, который требуется сохранить.
+- user (User): Объект пользователя, для которого генерируется путь.</p>
+<p>Returns:
+- str: Полный путь для сохранения файла.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def generate_save_path(filename, user: User) -&gt; str:
+    &#34;&#34;&#34;
+    Генерирует и возвращает полный путь для сохранения файла, связанного с пользователем.
+
+    Parameters:
+    - filename (str): Имя файла, который требуется сохранить.
+    - user (User): Объект пользователя, для которого генерируется путь.
+
+    Returns:
+    - str: Полный путь для сохранения файла.
+    &#34;&#34;&#34;  
+    return os.path.join(await user.get_user_folder(), &#39;train_files&#39;, filename)</code></pre>
+</details>
+</dd>
+<dt id="api.controller.get_feedbacks"><code class="name flex">
+<span>async def <span class="ident">get_feedbacks</span></span>(<span>request: starlette.requests.Request, token: str) ‑> <a title="api.schemas.FeedBacks" href="schemas.html#api.schemas.FeedBacks">FeedBacks</a> | dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Получение обратной связи для администраторов.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>request</code></strong> :&ensp;<code>Request</code></dt>
+<dd>Объект запроса FastAPI.</dd>
+<dt><strong><code>token</code></strong> :&ensp;<code>str</code></dt>
+<dd>Токен пользователя.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>FeedBacks | dict: Список обратной связи или словарь с ошибкой, если пользователь не является администратором.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@controller.get(&#39;/feedback&#39;)
+async def get_feedbacks(request: Request, token: str) -&gt; schemas.FeedBacks | dict:
+    &#34;&#34;&#34;
+    Получение обратной связи для администраторов.
+
+    Args:
+        request (Request): Объект запроса FastAPI.
+        token (str): Токен пользователя.
+
+    Returns:
+        FeedBacks | dict: Список обратной связи или словарь с ошибкой, если пользователь не является администратором.
+    &#34;&#34;&#34;
+    user: User = await utils.get_user_from_token(token, User)
+    if not user.is_admin:
+        return exceptions.user_is_not_admin
+    
+    return {&#39;feedbacks&#39;: [await item.json() for item in await FeedBack.objects.all()]}</code></pre>
+</details>
+</dd>
+<dt id="api.controller.get_mail_parse"><code class="name flex">
+<span>async def <span class="ident">get_mail_parse</span></span>(<span>request: starlette.requests.Request, token: str) ‑> <a title="api.schemas.GetHistoryReturn" href="schemas.html#api.schemas.GetHistoryReturn">GetHistoryReturn</a> | dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Получает историю выполненных операций парсинга электронных писем пользователя.</p>
+<p>Parameters:
+- request (Request): Объект запроса FastAPI.
+- token (str): Токен пользователя для аутентификации.</p>
+<p>Returns:
+- GetHistoryReturn | dict: Возвращает данные об истории парсинга электронных писем пользователя.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@controller.get(&#39;/history/mail&#39;)
+async def get_mail_parse(request: Request, token: str) -&gt; schemas.GetHistoryReturn | dict:
+    &#34;&#34;&#34;
+    Получает историю выполненных операций парсинга электронных писем пользователя.
+
+    Parameters:
+    - request (Request): Объект запроса FastAPI.
+    - token (str): Токен пользователя для аутентификации.
+
+    Returns:
+    - GetHistoryReturn | dict: Возвращает данные об истории парсинга электронных писем пользователя.
+    &#34;&#34;&#34;
+    user: User = await utils.get_user_from_token(token, User)
+
+    data: list = []
+    obj: QuerySet = await UserParseHistory.objects.filter(user_id=user.id).all()
+
+    for i in obj:
+        data.append(await i.json())
+
+    return {
+        &#39;result&#39;: data
+    }</code></pre>
+</details>
+</dd>
+<dt id="api.controller.inference"><code class="name flex">
+<span>async def <span class="ident">inference</span></span>(<span>request: starlette.requests.Request, token: str, model_name: str, predict_name: str, file: fastapi.datastructures.UploadFile = File(Ellipsis)) ‑> <a title="api.schemas.InferenceReturn" href="schemas.html#api.schemas.InferenceReturn">InferenceReturn</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Выполняет инференс (предсказание) на новых данных с использованием заданной модели.</p>
+<p>Parameters:
+- request (Request): Объект запроса FastAPI.
+- token (str): Токен пользователя для аутентификации.
+- model_name (str): Имя модели, которую необходимо использовать для инференса.
+- predict_name (str): Имя для сохранения результата инференса.
+- file (UploadFile): Загруженный CSV-файл для выполнения предсказания.</p>
+<p>Returns:
+- InferenceReturn: Возвращает данные о результате инференса.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@controller.post(&#39;/inference&#39;)
+async def inference(request: Request,
+                    token: str,
+                    model_name: str,
+                    predict_name: str,
+                    file: UploadFile = File(...)) -&gt; schemas.InferenceReturn:
+    &#34;&#34;&#34;
+    Выполняет инференс (предсказание) на новых данных с использованием заданной модели.
+
+    Parameters:
+    - request (Request): Объект запроса FastAPI.
+    - token (str): Токен пользователя для аутентификации.
+    - model_name (str): Имя модели, которую необходимо использовать для инференса.
+    - predict_name (str): Имя для сохранения результата инференса.
+    - file (UploadFile): Загруженный CSV-файл для выполнения предсказания.
+
+    Returns:
+    - InferenceReturn: Возвращает данные о результате инференса.
+    &#34;&#34;&#34;
+    if await utils.check_predict_name(predict_name, UserHistory):
+        raise exceptions.new_predict_conflict_name
+    if not await utils.check_file_expansion(file.filename, &#39;csv&#39;):
+        return exceptions.wrong_file_type
+
+    user: User = await utils.get_user_from_token(token, User)
+    model: str = await UserModels.objects.get(model_name=model_name)
+    save_to: str = os.path.join(await user.get_user_folder(), &#39;predict_files&#39;, file.filename)
+
+    with open(save_to, &#39;wb&#39;) as f:
+        f.write(file.file.read())
+
+    inference_catboost(
+        save_to,
+        os.path.join(model.model_path, model_name),
+        os.path.join(
+            await user.get_user_folder(),
+            &#39;predictions&#39;,
+            predict_name
+        )
+    )
+
+    await service.inference(user, save_to, predict_name)
+
+    return {
+        &#39;result&#39;: &#39;/&#39; + os.path.join(
+            await user.get_user_folder(),
+            &#39;predictions&#39;,
+            predict_name
+        ) + &#39;.csv&#39;
+    }</code></pre>
+</details>
+</dd>
+<dt id="api.controller.me"><code class="name flex">
+<span>async def <span class="ident">me</span></span>(<span>request: starlette.requests.Request, token: str) ‑> <a title="api.schemas.MeReturn" href="schemas.html#api.schemas.MeReturn">MeReturn</a> | dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Получает информацию о текущем пользователе.</p>
+<p>Parameters:
+- request (Request): Объект запроса FastAPI.
+- token (str): Токен пользователя для аутентификации.</p>
+<p>Returns:
+- MeReturn | dict: Возвращает данные о текущем пользователе или словарь с ошибкой.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@controller.get(&#39;/me&#39;)
+async def me(request: Request, token: str) -&gt; schemas.MeReturn | dict:
+    &#34;&#34;&#34;
+    Получает информацию о текущем пользователе.
+
+    Parameters:
+    - request (Request): Объект запроса FastAPI.
+    - token (str): Токен пользователя для аутентификации.
+
+    Returns:
+    - MeReturn | dict: Возвращает данные о текущем пользователе или словарь с ошибкой.
+    &#34;&#34;&#34;
+    user: User = await utils.get_user_from_token(token, User)
+    return await user.json()</code></pre>
+</details>
+</dd>
+<dt id="api.controller.models"><code class="name flex">
+<span>async def <span class="ident">models</span></span>(<span>request: starlette.requests.Request, token: str) ‑> <a title="api.schemas.GetModelReturn" href="schemas.html#api.schemas.GetModelReturn">GetModelReturn</a> | dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Получает информацию о моделях пользователя.</p>
+<p>Parameters:
+- request (Request): Объект запроса FastAPI.
+- token (str): Токен пользователя для аутентификации.</p>
+<p>Returns:
+- GetModelReturn | dict: Возвращает данные о моделях пользователя или словарь с ошибкой.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@controller.get(&#39;/model&#39;)
+async def models(request: Request, token: str) -&gt; schemas.GetModelReturn | dict:
+    &#34;&#34;&#34;
+    Получает информацию о моделях пользователя.
+
+    Parameters:
+    - request (Request): Объект запроса FastAPI.
+    - token (str): Токен пользователя для аутентификации.
+
+    Returns:
+    - GetModelReturn | dict: Возвращает данные о моделях пользователя или словарь с ошибкой.
+    &#34;&#34;&#34;
+    user: User = await utils.get_user_from_token(token, User)
+    user_models: QuerySet = UserModels.objects.filter(user_id=user.id)
+
+    data: list = []
+    for model in await user_models.all():
+        data.append(await model.json())
+
+    return {
+        &#39;models&#39;: data
+    }</code></pre>
+</details>
+</dd>
+<dt id="api.controller.my_predicts"><code class="name flex">
+<span>async def <span class="ident">my_predicts</span></span>(<span>request: starlette.requests.Request, token: str) ‑> <a title="api.schemas.PredictReturn" href="schemas.html#api.schemas.PredictReturn">PredictReturn</a> | dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Получает информацию о предсказаниях пользователя.</p>
+<p>Parameters:
+- request (Request): Объект запроса FastAPI.
+- token (str): Токен пользователя для аутентификации.</p>
+<p>Returns:
+- PredictReturn | dict: Возвращает данные о предсказаниях пользователя или словарь с ошибкой.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@controller.get(&#39;/predict&#39;)
+async def my_predicts(request: Request, token: str) -&gt; schemas.PredictReturn | dict:
+    &#34;&#34;&#34;
+    Получает информацию о предсказаниях пользователя.
+
+    Parameters:
+    - request (Request): Объект запроса FastAPI.
+    - token (str): Токен пользователя для аутентификации.
+
+    Returns:
+    - PredictReturn | dict: Возвращает данные о предсказаниях пользователя или словарь с ошибкой.
+    &#34;&#34;&#34;
+    user: User = await utils.get_user_from_token(token, User)
+    history: QuerySet = await UserHistory.objects.filter(user_id=user.id).all()
+
+    data: list = []
+    for h in history:
+        data.append(await h.json())
+
+    return {
+        &#39;predicts&#39;: data
+    }</code></pre>
+</details>
+</dd>
+<dt id="api.controller.new_model_optimize"><code class="name flex">
+<span>async def <span class="ident">new_model_optimize</span></span>(<span>request: starlette.requests.Request, token: str, model_name: str, file: fastapi.datastructures.UploadFile = File(Ellipsis)) ‑> <a title="api.schemas.ModelReturn" href="schemas.html#api.schemas.ModelReturn">ModelReturn</a> | dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Оптимизирует новую модель на основе загруженного CSV-файла.</p>
+<p>Parameters:
+- request (Request): Объект запроса FastAPI.
+- token (str): Токен пользователя для аутентификации.
+- model_name (str): Имя новой модели.
+- file (UploadFile): Загруженный CSV-файл для оптимизации.</p>
+<p>Returns:
+- ModelReturn | dict: Возвращает данные о результате оптимизации модели или словарь с ошибкой.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@controller.post(&#39;/ml/new_model/optimize&#39;)
+async def new_model_optimize(request: Request,
+                             token: str,
+                             model_name: str,
+                             file: UploadFile = File(...)) -&gt; schemas.ModelReturn | dict:
+    &#34;&#34;&#34;
+    Оптимизирует новую модель на основе загруженного CSV-файла.
+
+    Parameters:
+    - request (Request): Объект запроса FastAPI.
+    - token (str): Токен пользователя для аутентификации.
+    - model_name (str): Имя новой модели.
+    - file (UploadFile): Загруженный CSV-файл для оптимизации.
+
+    Returns:
+    - ModelReturn | dict: Возвращает данные о результате оптимизации модели или словарь с ошибкой.
+    &#34;&#34;&#34;  
+    if await utils.check_model_name(model_name, UserModels):
+        raise exceptions.new_model_conflict_name
+    if not await utils.check_file_expansion(file.filename, &#39;csv&#39;):
+        return exceptions.wrong_file_type
+    user: User = await utils.get_user_from_token(token, User)
+    save_to: str = await generate_save_path(file.filename, user)
+    model_path: str = os.path.join(await user.get_user_folder(), &#39;models&#39;)
+    
+    with open(save_to, &#39;wb&#39;) as f:
+        f.write(file.file.read())
+    
+    await service.create_new_model(user, save_to, model_name, model_path, mode=&#39;optimize&#39;)
+    
+    
+    optimize_catboost(save_to, os.path.join(model_path, model_name))
+    
+    return {
+        &#39;status&#39; : True
+    }</code></pre>
+</details>
+</dd>
+<dt id="api.controller.new_model_train"><code class="name flex">
+<span>async def <span class="ident">new_model_train</span></span>(<span>request: starlette.requests.Request, token: str, model_name: str, file: fastapi.datastructures.UploadFile = File(Ellipsis)) ‑> <a title="api.schemas.ModelReturn" href="schemas.html#api.schemas.ModelReturn">ModelReturn</a> | dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Обучает новую модель на основе загруженного CSV-файла.</p>
+<p>Parameters:
+- request (Request): Объект запроса FastAPI.
+- token (str): Токен пользователя для аутентификации.
+- model_name (str): Имя новой модели.
+- file (UploadFile): Загруженный CSV-файл для обучения.</p>
+<p>Returns:
+- ModelReturn | dict: Возвращает данные о результате обучения модели или словарь с ошибкой.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@controller.post(&#39;/ml/new_model/train&#39;)
+async def new_model_train(request: Request,
+                          token: str,
+                          model_name: str,
+                          file: UploadFile = File(...))-&gt; schemas.ModelReturn | dict:
+    &#34;&#34;&#34;
+    Обучает новую модель на основе загруженного CSV-файла.
+
+    Parameters:
+    - request (Request): Объект запроса FastAPI.
+    - token (str): Токен пользователя для аутентификации.
+    - model_name (str): Имя новой модели.
+    - file (UploadFile): Загруженный CSV-файл для обучения.
+
+    Returns:
+    - ModelReturn | dict: Возвращает данные о результате обучения модели или словарь с ошибкой.
+    &#34;&#34;&#34;  
+    if await utils.check_model_name(model_name, UserModels):
+        return exceptions.new_model_conflict_name
+    if not await utils.check_file_expansion(file.filename, &#39;csv&#39;):
+        return exceptions.wrong_file_type
+    
+    user: User = await utils.get_user_from_token(token, User)
+    save_to: str = await generate_save_path(file.filename, user)
+    model_path: str = os.path.join(await user.get_user_folder(), &#39;models&#39;)
+    
+    with open(save_to, &#39;wb&#39;) as f:
+        f.write(file.file.read())
+    
+    await service.create_new_model(user, save_to, model_name, model_path)
+    
+    train_catboost(save_to, os.path.join(model_path, model_name))
+    
+    return {
+        &#39;status&#39; : True
+    }</code></pre>
+</details>
+</dd>
+<dt id="api.controller.parse_mail_controller"><code class="name flex">
+<span>async def <span class="ident">parse_mail_controller</span></span>(<span>request: starlette.requests.Request, token: str, start_date_baseline: datetime.datetime, end_date_baseline: datetime.datetime, start_date_comparison: datetime.datetime, end_date_comparison: datetime.datetime, work_start_time_hours: int, work_start_time_minutes: int, work_end_time_hours: int, work_end_time_minutes: int, path_to_save: str, file: fastapi.datastructures.UploadFile = File(Ellipsis)) ‑> <a title="api.schemas.ParseMailReturn" href="schemas.html#api.schemas.ParseMailReturn">ParseMailReturn</a> | dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Выполняет парсинг электронных писем и сохраняет результаты в CSV-файл.</p>
+<p>Parameters:
+- request (Request): Объект запроса FastAPI.
+- token (str): Токен пользователя для аутентификации.
+- start_date_baseline (datetime): Начальная дата базового периода для парсинга.
+- end_date_baseline (datetime): Конечная дата базового периода для парсинга.
+- start_date_comparison (datetime): Начальная дата периода для сравнения.
+- end_date_comparison (datetime): Конечная дата периода для сравнения.
+- work_start_time_hours (int): Час начала рабочего времени.
+- work_start_time_minutes (int): Минута начала рабочего времени.
+- work_end_time_hours (int): Час окончания рабочего времени.
+- work_end_time_minutes (int): Минута окончания рабочего времени.
+- path_to_save (str): Путь для сохранения результатов парсинга.
+- file (UploadFile): Загруженный CSV-файл с данными для парсинга.</p>
+<p>Returns:
+- ParseMailReturn | dict: Возвращает данные о сохраненном файле и списке некорректных электронных почт.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@controller.post(&#39;/mail/parse&#39;)
+async def parse_mail_controller(request: Request,
+                                token: str,
+                                start_date_baseline: datetime,
+                                end_date_baseline: datetime,
+                                start_date_comparison: datetime,
+                                end_date_comparison: datetime,
+                                work_start_time_hours: int,
+                                work_start_time_minutes: int,
+                                work_end_time_hours: int,
+                                work_end_time_minutes: int,
+                                path_to_save: str,
+                                file: UploadFile = File(...)) -&gt; schemas.ParseMailReturn | dict:
+    &#34;&#34;&#34;
+    Выполняет парсинг электронных писем и сохраняет результаты в CSV-файл.
+
+    Parameters:
+    - request (Request): Объект запроса FastAPI.
+    - token (str): Токен пользователя для аутентификации.
+    - start_date_baseline (datetime): Начальная дата базового периода для парсинга.
+    - end_date_baseline (datetime): Конечная дата базового периода для парсинга.
+    - start_date_comparison (datetime): Начальная дата периода для сравнения.
+    - end_date_comparison (datetime): Конечная дата периода для сравнения.
+    - work_start_time_hours (int): Час начала рабочего времени.
+    - work_start_time_minutes (int): Минута начала рабочего времени.
+    - work_end_time_hours (int): Час окончания рабочего времени.
+    - work_end_time_minutes (int): Минута окончания рабочего времени.
+    - path_to_save (str): Путь для сохранения результатов парсинга.
+    - file (UploadFile): Загруженный CSV-файл с данными для парсинга.
+
+    Returns:
+    - ParseMailReturn | dict: Возвращает данные о сохраненном файле и списке некорректных электронных почт.
+    &#34;&#34;&#34;
+    user: User = await utils.get_user_from_token(token, User)
+
+    save_to: str = os.path.join(await user.get_user_folder(), &#39;data_for_parse&#39;, file.filename)
+    path_to_save: str = os.path.join(await user.get_user_folder(), &#39;data_from_parse&#39;, path_to_save + &#39;.csv&#39;)
+
+    if await utils.check_mail_parse(path_to_save, UserParseHistory, user.id):
+        return exceptions.new_parse_mail_conflict_name
+    if not await utils.check_file_expansion(file.filename, &#39;csv&#39;):
+        return exceptions.wrong_file_type
+
+    with open(save_to, &#39;wb&#39;) as f:
+        f.write(file.file.read())
+
+    await service.parse_mail(
+        start_date_baseline=start_date_baseline,
+        end_date_baseline=end_date_baseline,
+        start_date_comparison=start_date_comparison,
+        end_date_comparison=end_date_comparison,
+        work_start_time_hours=work_start_time_hours,
+        work_start_time_minutes=work_start_time_minutes,
+        work_end_time_hours=work_end_time_hours,
+        work_end_time_minutes=work_end_time_minutes,
+        data_path=path_to_save,
+        save_to=save_to,
+        user=user
+    )
+
+    res = process_email_accounts(
+        start_date_baseline=start_date_baseline,
+        end_date_baseline=end_date_baseline,
+        start_date_comparison=start_date_comparison,
+        end_date_comparison=end_date_comparison,
+        work_start_time=time(work_end_time_hours, work_start_time_minutes),
+        work_end_time=time(work_end_time_hours, work_end_time_minutes),
+        path_to_file=save_to,
+        path_to_save=path_to_save
+    )
+
+    return {
+        &#39;file&#39;: path_to_save,
+        &#39;wrong_emails&#39;: res
+    }</code></pre>
+</details>
+</dd>
+<dt id="api.controller.reset_password"><code class="name flex">
+<span>async def <span class="ident">reset_password</span></span>(<span>request: starlette.requests.Request, token: str, old: str, new: str) ‑> <a title="api.schemas.ResetPasswordReturn" href="schemas.html#api.schemas.ResetPasswordReturn">ResetPasswordReturn</a> | dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Сбрасывает пароль пользователя.</p>
+<p>Parameters:
+- request (Request): Объект запроса FastAPI.
+- token (str): Токен пользователя для сброса пароля.
+- old (str): Старый пароль пользователя.
+- new (str): Новый пароль пользователя.</p>
+<p>Returns:
+- ResetPasswordReturn | dict: Возвращает данные о результате сброса пароля или словарь с ошибкой.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@controller.post(&#39;/user/reset_password&#39;)
+async def reset_password(request: Request,
+                         token:str,
+                         old: str,
+                         new: str) -&gt; schemas.ResetPasswordReturn | dict:
+    &#34;&#34;&#34;
+    Сбрасывает пароль пользователя.
+
+    Parameters:
+    - request (Request): Объект запроса FastAPI.
+    - token (str): Токен пользователя для сброса пароля.
+    - old (str): Старый пароль пользователя.
+    - new (str): Новый пароль пользователя.
+
+    Returns:
+    - ResetPasswordReturn | dict: Возвращает данные о результате сброса пароля или словарь с ошибкой.
+    &#34;&#34;&#34;  
+    user: User = await utils.get_user_from_token(token, User)
+    return await service.reset_password(user, old, new)</code></pre>
+</details>
+</dd>
+<dt id="api.controller.sign_in"><code class="name flex">
+<span>async def <span class="ident">sign_in</span></span>(<span>request: starlette.requests.Request, email: pydantic.networks.EmailStr = 'email@email.email', password: str = 'password') ‑> <a title="api.schemas.SignInReturn" href="schemas.html#api.schemas.SignInReturn">SignInReturn</a> | dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Авторизует пользователя.</p>
+<p>Parameters:
+- request (Request): Объект запроса FastAPI.
+- email (EmailStr): Электронная почта пользователя.
+- password (str): Пароль пользователя.</p>
+<p>Returns:
+- SignInReturn | dict: Возвращает данные о результате авторизации или словарь с ошибкой.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@controller.post(&#39;/user/auth/sign-in&#39;)
+async def sign_in(request: Request, email: EmailStr =&#39;email@email.email&#39;,
+                  password: str=&#39;password&#39;) -&gt; schemas.SignInReturn | dict:
+    &#34;&#34;&#34;
+    Авторизует пользователя.
+
+    Parameters:
+    - request (Request): Объект запроса FastAPI.
+    - email (EmailStr): Электронная почта пользователя.
+    - password (str): Пароль пользователя.
+
+    Returns:
+    - SignInReturn | dict: Возвращает данные о результате авторизации или словарь с ошибкой.
+    &#34;&#34;&#34;  
+    return await service.sign_in(email, password)</code></pre>
+</details>
+</dd>
+<dt id="api.controller.sign_up"><code class="name flex">
+<span>async def <span class="ident">sign_up</span></span>(<span>request: starlette.requests.Request, username: str = 'username', first_name: str = 'first_name', last_name: str = 'last_name', email: pydantic.networks.EmailStr = 'email@email.email', password: str = 'password') ‑> <a title="api.schemas.SignUpReturn" href="schemas.html#api.schemas.SignUpReturn">SignUpReturn</a> | dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Регистрирует нового пользователя.</p>
+<p>Parameters:
+- request (Request): Объект запроса FastAPI.
+- username (str): Имя пользователя.
+- first_name (str): Имя пользователя.
+- last_name (str): Фамилия пользователя.
+- email (EmailStr): Электронная почта пользователя.
+- password (str): Пароль пользователя.</p>
+<p>Returns:
+- SignUpReturn | dict: Возвращает данные о результате регистрации или словарь с ошибкой.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@controller.post(&#39;/user/auth/sign-up&#39;)
+async def sign_up(request: Request,
+                  username: str = &#39;username&#39;,
+                  first_name: str =&#39;first_name&#39;,
+                  last_name: str = &#39;last_name&#39;,
+                  email: EmailStr =&#39;email@email.email&#39;,
+                  password: str=&#39;password&#39;) -&gt; schemas.SignUpReturn | dict:
+    &#34;&#34;&#34;
+    Регистрирует нового пользователя.
+
+    Parameters:
+    - request (Request): Объект запроса FastAPI.
+    - username (str): Имя пользователя.
+    - first_name (str): Имя пользователя.
+    - last_name (str): Фамилия пользователя.
+    - email (EmailStr): Электронная почта пользователя.
+    - password (str): Пароль пользователя.
+
+    Returns:
+    - SignUpReturn | dict: Возвращает данные о результате регистрации или словарь с ошибкой.
+    &#34;&#34;&#34;  
+    return await service.create_user(username, first_name, last_name, email, password)</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="api" href="index.html">api</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="api.controller.create_feedback" href="#api.controller.create_feedback">create_feedback</a></code></li>
+<li><code><a title="api.controller.delete_mail_parse" href="#api.controller.delete_mail_parse">delete_mail_parse</a></code></li>
+<li><code><a title="api.controller.delete_model" href="#api.controller.delete_model">delete_model</a></code></li>
+<li><code><a title="api.controller.delete_prediction" href="#api.controller.delete_prediction">delete_prediction</a></code></li>
+<li><code><a title="api.controller.generate_save_path" href="#api.controller.generate_save_path">generate_save_path</a></code></li>
+<li><code><a title="api.controller.get_feedbacks" href="#api.controller.get_feedbacks">get_feedbacks</a></code></li>
+<li><code><a title="api.controller.get_mail_parse" href="#api.controller.get_mail_parse">get_mail_parse</a></code></li>
+<li><code><a title="api.controller.inference" href="#api.controller.inference">inference</a></code></li>
+<li><code><a title="api.controller.me" href="#api.controller.me">me</a></code></li>
+<li><code><a title="api.controller.models" href="#api.controller.models">models</a></code></li>
+<li><code><a title="api.controller.my_predicts" href="#api.controller.my_predicts">my_predicts</a></code></li>
+<li><code><a title="api.controller.new_model_optimize" href="#api.controller.new_model_optimize">new_model_optimize</a></code></li>
+<li><code><a title="api.controller.new_model_train" href="#api.controller.new_model_train">new_model_train</a></code></li>
+<li><code><a title="api.controller.parse_mail_controller" href="#api.controller.parse_mail_controller">parse_mail_controller</a></code></li>
+<li><code><a title="api.controller.reset_password" href="#api.controller.reset_password">reset_password</a></code></li>
+<li><code><a title="api.controller.sign_in" href="#api.controller.sign_in">sign_in</a></code></li>
+<li><code><a title="api.controller.sign_up" href="#api.controller.sign_up">sign_up</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
