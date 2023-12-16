@@ -89,11 +89,11 @@ DepartureDynamics — это инновационный сервис, котор
 
 ## Контакты
 
-- **Чесников Леонид** (Ai-Engineer & Project-manager)
-- **Овчинников Алексей** (Backend)
-- **Тронев Алексей** (Design)
-- **Сорокина Александра** (Frontend)
-- **Винтерголлер Тимофей** (Frontend)
+- [**Чесников Леонид**](https://github.com/RebelRaider) (Ai-Engineer & Project-manager)
+- [**Овчинников Алексей**](https://github.com/allelleo) (Backend)
+- [**Тронев Алексей**](https://github.com/slund3r) (Design)
+- [**Сорокина Александра**]() (Frontend)
+- [**Винтерголлер Тимофей**]() (Frontend)
 
 ## Лицензия
 
