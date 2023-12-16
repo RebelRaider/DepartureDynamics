@@ -92,7 +92,7 @@ DepartureDynamics — это инновационный сервис, котор
 - [**Чесников Леонид**](https://github.com/RebelRaider) (Ai-Engineer & Project-manager)
 - [**Овчинников Алексей**](https://github.com/allelleo) (Backend)
 - [**Тронев Алексей**](https://github.com/slund3r) (Design)
-- [**Сорокина Александра**]() (Frontend)
+- [**Сорокина Александра**](https://github.com/SupPicaPica) (Frontend)
 - [**Винтерголлер Тимофей**]() (Frontend)
 
 ## Лицензия
