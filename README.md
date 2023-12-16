@@ -33,7 +33,7 @@ DepartureDynamics — это инновационный сервис, котор
 
 2. Перейдите в директорию проекта:
 
-   `cd DepartureDynamics/server`
+   `cd DepartureDynamics_LCT_Yakutia/server`
 
 3. Установите зависимости:
 
