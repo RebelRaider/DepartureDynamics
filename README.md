@@ -1,5 +1,3 @@
-Конечно, вот пример красивого и подробного README.md для вашего GitHub репозитория:
-
 # DepartureDynamics
 
 ![DepartureDynamics Logo](link/to/logo.png)
