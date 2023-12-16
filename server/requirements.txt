@@ -45,6 +45,7 @@ pandas==2.1.4
 patsy==0.5.4
 Pillow==10.1.0
 plotly==5.18.0
+psycopg2==2.9.9
 pydantic==1.10.8
 PyJWT==2.8.0
 pynndescent==0.5.11
