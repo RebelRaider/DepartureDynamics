@@ -1,0 +1,1288 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>api.schemas API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>api.schemas</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import pydantic
+import datetime
+
+
+class SignUpReturn(pydantic.BaseModel):
+    &#34;&#34;&#34;
+    Класс Pydantic для структуры данных, возвращаемых при успешной регистрации.
+
+    Содержит поля:
+    - status: булево значение, указывающее на успешность операции.
+    - user_id: целое число, идентификатор пользователя.
+    &#34;&#34;&#34; 
+    status: bool
+    user_id: int
+
+
+class SignInReturn(pydantic.BaseModel):
+    &#34;&#34;&#34;
+    Класс Pydantic для структуры данных, возвращаемых при успешном входе.
+
+    Содержит поле:
+    - token: строка, предположительно, токен для аутентификации.
+    &#34;&#34;&#34;
+    token: str
+
+
+class ResetPasswordReturn(pydantic.BaseModel):
+    &#34;&#34;&#34;
+    Класс Pydantic для структуры данных, возвращаемых при сбросе пароля.
+
+    Содержит поле:
+    - status: булево значение, указывающее на успешность операции.
+    &#34;&#34;&#34;
+    status: bool
+
+
+class ErrorModel(pydantic.BaseModel):
+    &#34;&#34;&#34;
+    Класс Pydantic для структуры данных сообщений об ошибках.
+
+    Содержит поля:
+    - status: булево значение, указывающее на успешность операции.
+    - error: строка, описание ошибки.
+    - error_ru: строка на русском языке, описание ошибки.
+    &#34;&#34;&#34;
+    status: bool = False
+    error: str
+    error_ru: str
+
+
+class ModelReturn(pydantic.BaseModel):
+    &#34;&#34;&#34;
+    Класс Pydantic для структуры данных возвращаемых значений, связанных с моделями.
+
+    Содержит поле:
+    - status: булево значение, указывающее на успешность операции.
+    &#34;&#34;&#34;
+    status: bool
+
+
+class InferenceReturn(pydantic.BaseModel):
+    &#34;&#34;&#34;
+    Класс Pydantic для структуры данных возвращаемых значений результатов вывода (inference).
+
+    Содержит поле:
+    - result: строка, представляющая результат вывода.
+    &#34;&#34;&#34;
+    result: str
+
+
+class MeReturn(pydantic.BaseModel):
+    &#34;&#34;&#34;
+    Класс Pydantic для структуры данных возвращаемых значений, связанных с данными о пользователе.
+
+    Содержит поля:
+    - id: целое число, идентификатор пользователя.
+    - created: объект datetime.datetime, дата и время создания пользователя.
+    - username: строка, имя пользователя.
+    - first_name: строка, имя пользователя.
+    - last_name: строка, фамилия пользователя.
+    - email: pydantic.EmailStr, адрес электронной почты пользователя.
+    &#34;&#34;&#34;
+    id: int
+    created: datetime.datetime
+    username: str
+    first_name: str
+    last_name: str
+    email: pydantic.EmailStr
+
+
+class ModelModel(pydantic.BaseModel):
+    &#34;&#34;&#34;
+    Класс Pydantic для структуры данных представления модели.
+
+    Содержит поля:
+    - id: целое число, идентификатор модели.
+    - created: объект datetime.datetime, дата и время создания модели.
+    - model_type: строка, тип модели.
+    - model_name: строка, имя модели.
+    &#34;&#34;&#34;
+    id: int
+    created: datetime.datetime
+    model_type: str
+    model_name: str
+
+
+class GetModelReturn(pydantic.BaseModel):
+    &#34;&#34;&#34;
+    Класс Pydantic для структуры данных возвращаемых значений, связанных с получением моделей.
+
+    Содержит поле:
+    - models: список объектов ModelModel, представляющих информацию о моделях.
+    &#34;&#34;&#34;
+    models: list[ModelModel]
+
+
+class PredictModel(pydantic.BaseModel):
+    &#34;&#34;&#34;
+    Класс Pydantic для структуры данных представления прогноза (predict).
+
+    Содержит поля:
+    - id: целое число, идентификатор прогноза.
+    - created: объект datetime.datetime, дата и время создания прогноза.
+    - predict_file: строка, имя файла прогноза.
+    - prediction: строка, описание прогноза.
+    - predict_name: строка, имя прогноза.
+    &#34;&#34;&#34;
+    id: int
+    created: datetime.datetime
+    predict_file: str
+    prediction: str
+    predict_name: str
+
+
+class PredictReturn(pydantic.BaseModel):
+    &#34;&#34;&#34;
+    Класс Pydantic для структуры данных возвращаемых значений, связанных с прогнозами.
+
+    Содержит поле:
+    - predicts: список объектов PredictModel, представляющих информацию о прогнозах.
+    &#34;&#34;&#34;
+    predicts: list[PredictModel]
+
+
+class FeedBackCreateReturn(ModelReturn):
+    &#34;&#34;&#34;
+    Подкласс ModelReturn для возвращаемых значений, связанных с созданием обратной связи.
+
+    Содержит поле:
+    - status: булево значение, указывающее на успешность операции.
+    &#34;&#34;&#34;
+    pass
+
+class ParseMailReturn(pydantic.BaseModel):
+    &#34;&#34;&#34;
+    Класс Pydantic для структуры данных возвращаемых значений, связанных с парсингом почты.
+
+    Содержит поля:
+    - file: строка, имя файла.
+    - wrong_emails: список строк, содержащих неверные адреса электронной почты.
+    &#34;&#34;&#34;
+    file:str
+    wrong_emails: list[str]
+    
+class Feed(pydantic.BaseModel):
+    &#34;&#34;&#34;
+    Класс Pydantic для структуры данных представления обратной связи.
+
+    Содержит поля:
+    - id: целое число, идентификатор обратной связи.
+    - created: объект datetime.datetime, дата и время создания обратной связи.
+    - user_fio: строка, ФИО пользователя.
+    - user_email: строка, электронная почта пользователя.
+    - user_message: строка, сообщение пользователя.
+    &#34;&#34;&#34;
+    id: int
+    created: datetime.datetime
+    user_fio: str
+    user_email: str
+    user_message: str
+    
+class FeedBacks(pydantic.BaseModel):
+    &#34;&#34;&#34;
+    Класс Pydantic для структуры данных возвращаемых значений, связанных с обратной связью.
+
+    Содержит поле:
+    - feedbacks: список объектов Feed, представляющих информацию об обратной связи.
+    &#34;&#34;&#34;
+    feedbacks: list[Feed]
+    
+
+class HistoryModel(pydantic.BaseModel):
+    &#34;&#34;&#34;
+    Класс Pydantic для структуры данных представления истории прогнозов.
+
+    Содержит поля:
+    - id: целое число, идентификатор записи истории.
+    - created: объект datetime.datetime, дата и время создания записи.
+    - predict_file: строка, имя файла прогноза.
+    - prediction: строка, описание прогноза.
+    - predict_name: строка, имя прогноза.
+    &#34;&#34;&#34;
+    id: int
+    created: datetime.datetime
+    predict_file: str
+    prediction: str
+    predict_name: str
+    
+class GetHistoryReturn(pydantic.BaseModel):
+    &#34;&#34;&#34;
+    Класс Pydantic для структуры данных возвращаемых значений, связанных с получением истории.
+
+    Содержит поле:
+    - result: список объектов HistoryModel, представляющих информацию о записях истории.
+    &#34;&#34;&#34;
+    result: list[HistoryModel]
+    
+class DeleteHistoryReturn(ModelReturn):
+    &#34;&#34;&#34;
+    Подкласс ModelReturn для возвращаемых значений, связанных с удалением записей истории.
+    Содержит поле:
+    - status: булево значение, указывающее на успешность операции.
+    &#34;&#34;&#34;
+    pass</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="api.schemas.DeleteHistoryReturn"><code class="flex name class">
+<span>class <span class="ident">DeleteHistoryReturn</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Подкласс ModelReturn для возвращаемых значений, связанных с удалением записей истории.
+Содержит поле:
+- status: булево значение, указывающее на успешность операции.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class DeleteHistoryReturn(ModelReturn):
+    &#34;&#34;&#34;
+    Подкласс ModelReturn для возвращаемых значений, связанных с удалением записей истории.
+    Содержит поле:
+    - status: булево значение, указывающее на успешность операции.
+    &#34;&#34;&#34;
+    pass</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="api.schemas.ModelReturn" href="#api.schemas.ModelReturn">ModelReturn</a></li>
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li>pydantic.main.DeleteHistoryReturn</li>
+</ul>
+</dd>
+<dt id="api.schemas.ErrorModel"><code class="flex name class">
+<span>class <span class="ident">ErrorModel</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Класс Pydantic для структуры данных сообщений об ошибках.</p>
+<p>Содержит поля:
+- status: булево значение, указывающее на успешность операции.
+- error: строка, описание ошибки.
+- error_ru: строка на русском языке, описание ошибки.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ErrorModel(pydantic.BaseModel):
+    &#34;&#34;&#34;
+    Класс Pydantic для структуры данных сообщений об ошибках.
+
+    Содержит поля:
+    - status: булево значение, указывающее на успешность операции.
+    - error: строка, описание ошибки.
+    - error_ru: строка на русском языке, описание ошибки.
+    &#34;&#34;&#34;
+    status: bool = False
+    error: str
+    error_ru: str</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="api.schemas.ErrorModel.error"><code class="name">var <span class="ident">error</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="api.schemas.ErrorModel.error_ru"><code class="name">var <span class="ident">error_ru</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="api.schemas.ErrorModel.status"><code class="name">var <span class="ident">status</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="api.schemas.Feed"><code class="flex name class">
+<span>class <span class="ident">Feed</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Класс Pydantic для структуры данных представления обратной связи.</p>
+<p>Содержит поля:
+- id: целое число, идентификатор обратной связи.
+- created: объект datetime.datetime, дата и время создания обратной связи.
+- user_fio: строка, ФИО пользователя.
+- user_email: строка, электронная почта пользователя.
+- user_message: строка, сообщение пользователя.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Feed(pydantic.BaseModel):
+    &#34;&#34;&#34;
+    Класс Pydantic для структуры данных представления обратной связи.
+
+    Содержит поля:
+    - id: целое число, идентификатор обратной связи.
+    - created: объект datetime.datetime, дата и время создания обратной связи.
+    - user_fio: строка, ФИО пользователя.
+    - user_email: строка, электронная почта пользователя.
+    - user_message: строка, сообщение пользователя.
+    &#34;&#34;&#34;
+    id: int
+    created: datetime.datetime
+    user_fio: str
+    user_email: str
+    user_message: str</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li>pydantic.main.Feed</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="api.schemas.Feed.created"><code class="name">var <span class="ident">created</span> : datetime.datetime</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="api.schemas.Feed.id"><code class="name">var <span class="ident">id</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="api.schemas.Feed.user_email"><code class="name">var <span class="ident">user_email</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="api.schemas.Feed.user_fio"><code class="name">var <span class="ident">user_fio</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="api.schemas.Feed.user_message"><code class="name">var <span class="ident">user_message</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="api.schemas.FeedBackCreateReturn"><code class="flex name class">
+<span>class <span class="ident">FeedBackCreateReturn</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Подкласс ModelReturn для возвращаемых значений, связанных с созданием обратной связи.</p>
+<p>Содержит поле:
+- status: булево значение, указывающее на успешность операции.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class FeedBackCreateReturn(ModelReturn):
+    &#34;&#34;&#34;
+    Подкласс ModelReturn для возвращаемых значений, связанных с созданием обратной связи.
+
+    Содержит поле:
+    - status: булево значение, указывающее на успешность операции.
+    &#34;&#34;&#34;
+    pass</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="api.schemas.ModelReturn" href="#api.schemas.ModelReturn">ModelReturn</a></li>
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li>pydantic.main.FeedBackCreateReturn</li>
+</ul>
+</dd>
+<dt id="api.schemas.FeedBacks"><code class="flex name class">
+<span>class <span class="ident">FeedBacks</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Класс Pydantic для структуры данных возвращаемых значений, связанных с обратной связью.</p>
+<p>Содержит поле:
+- feedbacks: список объектов Feed, представляющих информацию об обратной связи.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class FeedBacks(pydantic.BaseModel):
+    &#34;&#34;&#34;
+    Класс Pydantic для структуры данных возвращаемых значений, связанных с обратной связью.
+
+    Содержит поле:
+    - feedbacks: список объектов Feed, представляющих информацию об обратной связи.
+    &#34;&#34;&#34;
+    feedbacks: list[Feed]</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li>pydantic.main.FeedBacks</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="api.schemas.FeedBacks.feedbacks"><code class="name">var <span class="ident">feedbacks</span> : list[<a title="api.schemas.Feed" href="#api.schemas.Feed">Feed</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="api.schemas.GetHistoryReturn"><code class="flex name class">
+<span>class <span class="ident">GetHistoryReturn</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Класс Pydantic для структуры данных возвращаемых значений, связанных с получением истории.</p>
+<p>Содержит поле:
+- result: список объектов HistoryModel, представляющих информацию о записях истории.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class GetHistoryReturn(pydantic.BaseModel):
+    &#34;&#34;&#34;
+    Класс Pydantic для структуры данных возвращаемых значений, связанных с получением истории.
+
+    Содержит поле:
+    - result: список объектов HistoryModel, представляющих информацию о записях истории.
+    &#34;&#34;&#34;
+    result: list[HistoryModel]</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li>pydantic.main.GetHistoryReturn</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="api.schemas.GetHistoryReturn.result"><code class="name">var <span class="ident">result</span> : list[<a title="api.schemas.HistoryModel" href="#api.schemas.HistoryModel">HistoryModel</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="api.schemas.GetModelReturn"><code class="flex name class">
+<span>class <span class="ident">GetModelReturn</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Класс Pydantic для структуры данных возвращаемых значений, связанных с получением моделей.</p>
+<p>Содержит поле:
+- models: список объектов ModelModel, представляющих информацию о моделях.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class GetModelReturn(pydantic.BaseModel):
+    &#34;&#34;&#34;
+    Класс Pydantic для структуры данных возвращаемых значений, связанных с получением моделей.
+
+    Содержит поле:
+    - models: список объектов ModelModel, представляющих информацию о моделях.
+    &#34;&#34;&#34;
+    models: list[ModelModel]</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li>pydantic.main.GetModelReturn</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="api.schemas.GetModelReturn.models"><code class="name">var <span class="ident">models</span> : list[<a title="api.schemas.ModelModel" href="#api.schemas.ModelModel">ModelModel</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="api.schemas.HistoryModel"><code class="flex name class">
+<span>class <span class="ident">HistoryModel</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Класс Pydantic для структуры данных представления истории прогнозов.</p>
+<p>Содержит поля:
+- id: целое число, идентификатор записи истории.
+- created: объект datetime.datetime, дата и время создания записи.
+- predict_file: строка, имя файла прогноза.
+- prediction: строка, описание прогноза.
+- predict_name: строка, имя прогноза.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class HistoryModel(pydantic.BaseModel):
+    &#34;&#34;&#34;
+    Класс Pydantic для структуры данных представления истории прогнозов.
+
+    Содержит поля:
+    - id: целое число, идентификатор записи истории.
+    - created: объект datetime.datetime, дата и время создания записи.
+    - predict_file: строка, имя файла прогноза.
+    - prediction: строка, описание прогноза.
+    - predict_name: строка, имя прогноза.
+    &#34;&#34;&#34;
+    id: int
+    created: datetime.datetime
+    predict_file: str
+    prediction: str
+    predict_name: str</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li>pydantic.main.HistoryModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="api.schemas.HistoryModel.created"><code class="name">var <span class="ident">created</span> : datetime.datetime</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="api.schemas.HistoryModel.id"><code class="name">var <span class="ident">id</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="api.schemas.HistoryModel.predict_file"><code class="name">var <span class="ident">predict_file</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="api.schemas.HistoryModel.predict_name"><code class="name">var <span class="ident">predict_name</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="api.schemas.HistoryModel.prediction"><code class="name">var <span class="ident">prediction</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="api.schemas.InferenceReturn"><code class="flex name class">
+<span>class <span class="ident">InferenceReturn</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Класс Pydantic для структуры данных возвращаемых значений результатов вывода (inference).</p>
+<p>Содержит поле:
+- result: строка, представляющая результат вывода.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class InferenceReturn(pydantic.BaseModel):
+    &#34;&#34;&#34;
+    Класс Pydantic для структуры данных возвращаемых значений результатов вывода (inference).
+
+    Содержит поле:
+    - result: строка, представляющая результат вывода.
+    &#34;&#34;&#34;
+    result: str</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li>pydantic.main.InferenceReturn</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="api.schemas.InferenceReturn.result"><code class="name">var <span class="ident">result</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="api.schemas.MeReturn"><code class="flex name class">
+<span>class <span class="ident">MeReturn</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Класс Pydantic для структуры данных возвращаемых значений, связанных с данными о пользователе.</p>
+<p>Содержит поля:
+- id: целое число, идентификатор пользователя.
+- created: объект datetime.datetime, дата и время создания пользователя.
+- username: строка, имя пользователя.
+- first_name: строка, имя пользователя.
+- last_name: строка, фамилия пользователя.
+- email: pydantic.EmailStr, адрес электронной почты пользователя.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class MeReturn(pydantic.BaseModel):
+    &#34;&#34;&#34;
+    Класс Pydantic для структуры данных возвращаемых значений, связанных с данными о пользователе.
+
+    Содержит поля:
+    - id: целое число, идентификатор пользователя.
+    - created: объект datetime.datetime, дата и время создания пользователя.
+    - username: строка, имя пользователя.
+    - first_name: строка, имя пользователя.
+    - last_name: строка, фамилия пользователя.
+    - email: pydantic.EmailStr, адрес электронной почты пользователя.
+    &#34;&#34;&#34;
+    id: int
+    created: datetime.datetime
+    username: str
+    first_name: str
+    last_name: str
+    email: pydantic.EmailStr</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li>pydantic.main.MeReturn</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="api.schemas.MeReturn.created"><code class="name">var <span class="ident">created</span> : datetime.datetime</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="api.schemas.MeReturn.email"><code class="name">var <span class="ident">email</span> : pydantic.networks.EmailStr</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="api.schemas.MeReturn.first_name"><code class="name">var <span class="ident">first_name</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="api.schemas.MeReturn.id"><code class="name">var <span class="ident">id</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="api.schemas.MeReturn.last_name"><code class="name">var <span class="ident">last_name</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="api.schemas.MeReturn.username"><code class="name">var <span class="ident">username</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="api.schemas.ModelModel"><code class="flex name class">
+<span>class <span class="ident">ModelModel</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Класс Pydantic для структуры данных представления модели.</p>
+<p>Содержит поля:
+- id: целое число, идентификатор модели.
+- created: объект datetime.datetime, дата и время создания модели.
+- model_type: строка, тип модели.
+- model_name: строка, имя модели.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ModelModel(pydantic.BaseModel):
+    &#34;&#34;&#34;
+    Класс Pydantic для структуры данных представления модели.
+
+    Содержит поля:
+    - id: целое число, идентификатор модели.
+    - created: объект datetime.datetime, дата и время создания модели.
+    - model_type: строка, тип модели.
+    - model_name: строка, имя модели.
+    &#34;&#34;&#34;
+    id: int
+    created: datetime.datetime
+    model_type: str
+    model_name: str</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li>pydantic.main.ModelModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="api.schemas.ModelModel.created"><code class="name">var <span class="ident">created</span> : datetime.datetime</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="api.schemas.ModelModel.id"><code class="name">var <span class="ident">id</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="api.schemas.ModelModel.model_name"><code class="name">var <span class="ident">model_name</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="api.schemas.ModelModel.model_type"><code class="name">var <span class="ident">model_type</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="api.schemas.ModelReturn"><code class="flex name class">
+<span>class <span class="ident">ModelReturn</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Класс Pydantic для структуры данных возвращаемых значений, связанных с моделями.</p>
+<p>Содержит поле:
+- status: булево значение, указывающее на успешность операции.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ModelReturn(pydantic.BaseModel):
+    &#34;&#34;&#34;
+    Класс Pydantic для структуры данных возвращаемых значений, связанных с моделями.
+
+    Содержит поле:
+    - status: булево значение, указывающее на успешность операции.
+    &#34;&#34;&#34;
+    status: bool</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="api.schemas.DeleteHistoryReturn" href="#api.schemas.DeleteHistoryReturn">DeleteHistoryReturn</a></li>
+<li><a title="api.schemas.FeedBackCreateReturn" href="#api.schemas.FeedBackCreateReturn">FeedBackCreateReturn</a></li>
+<li>pydantic.main.ModelReturn</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="api.schemas.ModelReturn.status"><code class="name">var <span class="ident">status</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="api.schemas.ParseMailReturn"><code class="flex name class">
+<span>class <span class="ident">ParseMailReturn</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Класс Pydantic для структуры данных возвращаемых значений, связанных с парсингом почты.</p>
+<p>Содержит поля:
+- file: строка, имя файла.
+- wrong_emails: список строк, содержащих неверные адреса электронной почты.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ParseMailReturn(pydantic.BaseModel):
+    &#34;&#34;&#34;
+    Класс Pydantic для структуры данных возвращаемых значений, связанных с парсингом почты.
+
+    Содержит поля:
+    - file: строка, имя файла.
+    - wrong_emails: список строк, содержащих неверные адреса электронной почты.
+    &#34;&#34;&#34;
+    file:str
+    wrong_emails: list[str]</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li>pydantic.main.ParseMailReturn</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="api.schemas.ParseMailReturn.file"><code class="name">var <span class="ident">file</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="api.schemas.ParseMailReturn.wrong_emails"><code class="name">var <span class="ident">wrong_emails</span> : list[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="api.schemas.PredictModel"><code class="flex name class">
+<span>class <span class="ident">PredictModel</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Класс Pydantic для структуры данных представления прогноза (predict).</p>
+<p>Содержит поля:
+- id: целое число, идентификатор прогноза.
+- created: объект datetime.datetime, дата и время создания прогноза.
+- predict_file: строка, имя файла прогноза.
+- prediction: строка, описание прогноза.
+- predict_name: строка, имя прогноза.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class PredictModel(pydantic.BaseModel):
+    &#34;&#34;&#34;
+    Класс Pydantic для структуры данных представления прогноза (predict).
+
+    Содержит поля:
+    - id: целое число, идентификатор прогноза.
+    - created: объект datetime.datetime, дата и время создания прогноза.
+    - predict_file: строка, имя файла прогноза.
+    - prediction: строка, описание прогноза.
+    - predict_name: строка, имя прогноза.
+    &#34;&#34;&#34;
+    id: int
+    created: datetime.datetime
+    predict_file: str
+    prediction: str
+    predict_name: str</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li>pydantic.main.PredictModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="api.schemas.PredictModel.created"><code class="name">var <span class="ident">created</span> : datetime.datetime</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="api.schemas.PredictModel.id"><code class="name">var <span class="ident">id</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="api.schemas.PredictModel.predict_file"><code class="name">var <span class="ident">predict_file</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="api.schemas.PredictModel.predict_name"><code class="name">var <span class="ident">predict_name</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="api.schemas.PredictModel.prediction"><code class="name">var <span class="ident">prediction</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="api.schemas.PredictReturn"><code class="flex name class">
+<span>class <span class="ident">PredictReturn</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Класс Pydantic для структуры данных возвращаемых значений, связанных с прогнозами.</p>
+<p>Содержит поле:
+- predicts: список объектов PredictModel, представляющих информацию о прогнозах.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class PredictReturn(pydantic.BaseModel):
+    &#34;&#34;&#34;
+    Класс Pydantic для структуры данных возвращаемых значений, связанных с прогнозами.
+
+    Содержит поле:
+    - predicts: список объектов PredictModel, представляющих информацию о прогнозах.
+    &#34;&#34;&#34;
+    predicts: list[PredictModel]</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li>pydantic.main.PredictReturn</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="api.schemas.PredictReturn.predicts"><code class="name">var <span class="ident">predicts</span> : list[<a title="api.schemas.PredictModel" href="#api.schemas.PredictModel">PredictModel</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="api.schemas.ResetPasswordReturn"><code class="flex name class">
+<span>class <span class="ident">ResetPasswordReturn</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Класс Pydantic для структуры данных, возвращаемых при сбросе пароля.</p>
+<p>Содержит поле:
+- status: булево значение, указывающее на успешность операции.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ResetPasswordReturn(pydantic.BaseModel):
+    &#34;&#34;&#34;
+    Класс Pydantic для структуры данных, возвращаемых при сбросе пароля.
+
+    Содержит поле:
+    - status: булево значение, указывающее на успешность операции.
+    &#34;&#34;&#34;
+    status: bool</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li>pydantic.main.ResetPasswordReturn</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="api.schemas.ResetPasswordReturn.status"><code class="name">var <span class="ident">status</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="api.schemas.SignInReturn"><code class="flex name class">
+<span>class <span class="ident">SignInReturn</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Класс Pydantic для структуры данных, возвращаемых при успешном входе.</p>
+<p>Содержит поле:
+- token: строка, предположительно, токен для аутентификации.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class SignInReturn(pydantic.BaseModel):
+    &#34;&#34;&#34;
+    Класс Pydantic для структуры данных, возвращаемых при успешном входе.
+
+    Содержит поле:
+    - token: строка, предположительно, токен для аутентификации.
+    &#34;&#34;&#34;
+    token: str</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li>pydantic.main.SignInReturn</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="api.schemas.SignInReturn.token"><code class="name">var <span class="ident">token</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="api.schemas.SignUpReturn"><code class="flex name class">
+<span>class <span class="ident">SignUpReturn</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Класс Pydantic для структуры данных, возвращаемых при успешной регистрации.</p>
+<p>Содержит поля:
+- status: булево значение, указывающее на успешность операции.
+- user_id: целое число, идентификатор пользователя.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class SignUpReturn(pydantic.BaseModel):
+    &#34;&#34;&#34;
+    Класс Pydantic для структуры данных, возвращаемых при успешной регистрации.
+
+    Содержит поля:
+    - status: булево значение, указывающее на успешность операции.
+    - user_id: целое число, идентификатор пользователя.
+    &#34;&#34;&#34; 
+    status: bool
+    user_id: int</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li>pydantic.main.SignUpReturn</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="api.schemas.SignUpReturn.status"><code class="name">var <span class="ident">status</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="api.schemas.SignUpReturn.user_id"><code class="name">var <span class="ident">user_id</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="api" href="index.html">api</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="api.schemas.DeleteHistoryReturn" href="#api.schemas.DeleteHistoryReturn">DeleteHistoryReturn</a></code></h4>
+</li>
+<li>
+<h4><code><a title="api.schemas.ErrorModel" href="#api.schemas.ErrorModel">ErrorModel</a></code></h4>
+<ul class="">
+<li><code><a title="api.schemas.ErrorModel.error" href="#api.schemas.ErrorModel.error">error</a></code></li>
+<li><code><a title="api.schemas.ErrorModel.error_ru" href="#api.schemas.ErrorModel.error_ru">error_ru</a></code></li>
+<li><code><a title="api.schemas.ErrorModel.status" href="#api.schemas.ErrorModel.status">status</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="api.schemas.Feed" href="#api.schemas.Feed">Feed</a></code></h4>
+<ul class="">
+<li><code><a title="api.schemas.Feed.created" href="#api.schemas.Feed.created">created</a></code></li>
+<li><code><a title="api.schemas.Feed.id" href="#api.schemas.Feed.id">id</a></code></li>
+<li><code><a title="api.schemas.Feed.user_email" href="#api.schemas.Feed.user_email">user_email</a></code></li>
+<li><code><a title="api.schemas.Feed.user_fio" href="#api.schemas.Feed.user_fio">user_fio</a></code></li>
+<li><code><a title="api.schemas.Feed.user_message" href="#api.schemas.Feed.user_message">user_message</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="api.schemas.FeedBackCreateReturn" href="#api.schemas.FeedBackCreateReturn">FeedBackCreateReturn</a></code></h4>
+</li>
+<li>
+<h4><code><a title="api.schemas.FeedBacks" href="#api.schemas.FeedBacks">FeedBacks</a></code></h4>
+<ul class="">
+<li><code><a title="api.schemas.FeedBacks.feedbacks" href="#api.schemas.FeedBacks.feedbacks">feedbacks</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="api.schemas.GetHistoryReturn" href="#api.schemas.GetHistoryReturn">GetHistoryReturn</a></code></h4>
+<ul class="">
+<li><code><a title="api.schemas.GetHistoryReturn.result" href="#api.schemas.GetHistoryReturn.result">result</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="api.schemas.GetModelReturn" href="#api.schemas.GetModelReturn">GetModelReturn</a></code></h4>
+<ul class="">
+<li><code><a title="api.schemas.GetModelReturn.models" href="#api.schemas.GetModelReturn.models">models</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="api.schemas.HistoryModel" href="#api.schemas.HistoryModel">HistoryModel</a></code></h4>
+<ul class="">
+<li><code><a title="api.schemas.HistoryModel.created" href="#api.schemas.HistoryModel.created">created</a></code></li>
+<li><code><a title="api.schemas.HistoryModel.id" href="#api.schemas.HistoryModel.id">id</a></code></li>
+<li><code><a title="api.schemas.HistoryModel.predict_file" href="#api.schemas.HistoryModel.predict_file">predict_file</a></code></li>
+<li><code><a title="api.schemas.HistoryModel.predict_name" href="#api.schemas.HistoryModel.predict_name">predict_name</a></code></li>
+<li><code><a title="api.schemas.HistoryModel.prediction" href="#api.schemas.HistoryModel.prediction">prediction</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="api.schemas.InferenceReturn" href="#api.schemas.InferenceReturn">InferenceReturn</a></code></h4>
+<ul class="">
+<li><code><a title="api.schemas.InferenceReturn.result" href="#api.schemas.InferenceReturn.result">result</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="api.schemas.MeReturn" href="#api.schemas.MeReturn">MeReturn</a></code></h4>
+<ul class="two-column">
+<li><code><a title="api.schemas.MeReturn.created" href="#api.schemas.MeReturn.created">created</a></code></li>
+<li><code><a title="api.schemas.MeReturn.email" href="#api.schemas.MeReturn.email">email</a></code></li>
+<li><code><a title="api.schemas.MeReturn.first_name" href="#api.schemas.MeReturn.first_name">first_name</a></code></li>
+<li><code><a title="api.schemas.MeReturn.id" href="#api.schemas.MeReturn.id">id</a></code></li>
+<li><code><a title="api.schemas.MeReturn.last_name" href="#api.schemas.MeReturn.last_name">last_name</a></code></li>
+<li><code><a title="api.schemas.MeReturn.username" href="#api.schemas.MeReturn.username">username</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="api.schemas.ModelModel" href="#api.schemas.ModelModel">ModelModel</a></code></h4>
+<ul class="">
+<li><code><a title="api.schemas.ModelModel.created" href="#api.schemas.ModelModel.created">created</a></code></li>
+<li><code><a title="api.schemas.ModelModel.id" href="#api.schemas.ModelModel.id">id</a></code></li>
+<li><code><a title="api.schemas.ModelModel.model_name" href="#api.schemas.ModelModel.model_name">model_name</a></code></li>
+<li><code><a title="api.schemas.ModelModel.model_type" href="#api.schemas.ModelModel.model_type">model_type</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="api.schemas.ModelReturn" href="#api.schemas.ModelReturn">ModelReturn</a></code></h4>
+<ul class="">
+<li><code><a title="api.schemas.ModelReturn.status" href="#api.schemas.ModelReturn.status">status</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="api.schemas.ParseMailReturn" href="#api.schemas.ParseMailReturn">ParseMailReturn</a></code></h4>
+<ul class="">
+<li><code><a title="api.schemas.ParseMailReturn.file" href="#api.schemas.ParseMailReturn.file">file</a></code></li>
+<li><code><a title="api.schemas.ParseMailReturn.wrong_emails" href="#api.schemas.ParseMailReturn.wrong_emails">wrong_emails</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="api.schemas.PredictModel" href="#api.schemas.PredictModel">PredictModel</a></code></h4>
+<ul class="">
+<li><code><a title="api.schemas.PredictModel.created" href="#api.schemas.PredictModel.created">created</a></code></li>
+<li><code><a title="api.schemas.PredictModel.id" href="#api.schemas.PredictModel.id">id</a></code></li>
+<li><code><a title="api.schemas.PredictModel.predict_file" href="#api.schemas.PredictModel.predict_file">predict_file</a></code></li>
+<li><code><a title="api.schemas.PredictModel.predict_name" href="#api.schemas.PredictModel.predict_name">predict_name</a></code></li>
+<li><code><a title="api.schemas.PredictModel.prediction" href="#api.schemas.PredictModel.prediction">prediction</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="api.schemas.PredictReturn" href="#api.schemas.PredictReturn">PredictReturn</a></code></h4>
+<ul class="">
+<li><code><a title="api.schemas.PredictReturn.predicts" href="#api.schemas.PredictReturn.predicts">predicts</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="api.schemas.ResetPasswordReturn" href="#api.schemas.ResetPasswordReturn">ResetPasswordReturn</a></code></h4>
+<ul class="">
+<li><code><a title="api.schemas.ResetPasswordReturn.status" href="#api.schemas.ResetPasswordReturn.status">status</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="api.schemas.SignInReturn" href="#api.schemas.SignInReturn">SignInReturn</a></code></h4>
+<ul class="">
+<li><code><a title="api.schemas.SignInReturn.token" href="#api.schemas.SignInReturn.token">token</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="api.schemas.SignUpReturn" href="#api.schemas.SignUpReturn">SignUpReturn</a></code></h4>
+<ul class="">
+<li><code><a title="api.schemas.SignUpReturn.status" href="#api.schemas.SignUpReturn.status">status</a></code></li>
+<li><code><a title="api.schemas.SignUpReturn.user_id" href="#api.schemas.SignUpReturn.user_id">user_id</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
