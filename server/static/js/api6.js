@@ -279,6 +279,6 @@ fetch(url15, {
 
 function predict_dashboard(path)
 {
-    window.location.replace("yakutia3.html");
+    window.location.replace("/dashboard");
 }
 
