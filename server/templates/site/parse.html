@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body >
+  <link rel="stylesheet" href="/static/css/yakutia.css">
+
+  <script src='/static/js/yakutia.js'></script>
+  <script src='/static/js/api5.js'></script>
+
+  <div class="bodysign">
+            <div class="header blocks">
+            
+                <img class="img blocks" src="/static/images/webdesignDD_0000s_0000s_0000_Logo-Dashboard 1.png">
+                <a class="blocks" style="text-decoration: none;" href=""><h3 class="blocks zagolovok">Departure <br> Dynamics</h3></a>
+                <a class="blocks login" href="/lk">Личный кабинет</a>
+                <a style="margin-left: 20px;" class="login" href="/train">Загрузка</a>
+                <a style="margin-left: 20px;" class="login" href="/history">История</a>
+                <a class="blocks login" href="/">Выход</a>
+            </div>
+            <div>
+                <h3 style=" width: 800px; color:white;position: relative; top: 50px;left: 300px;font-family: Montserrat; font-size: 40px;">Добро пожаловать, %username%!</h3>
+            
+        </div>
+            <div class="login-page2">
+                <div class="formtwo">
+
+                    <h3 style="position: relative; top: -20px;left: 0px;font-family: Montserrat; font-size: 30px;">Анализ сотрудников</h3><br>
+                    <h3 style="position: relative; top: -20px;left: 0px;font-family: Montserrat; font-size: 15px;">На данной странице вы можете собрать информацию
+с почт сотрудников, загрузив csv-файл
+c логинами и паролями ниже:</h3>
+
+                    <input  style="font-style: none;"id="csvfile" type="file">
+                     
+
+                     <input value="Введите название" id="path" type="text">
+                     <input value="Время работы компании" id="time1" type="time">
+                     <input value="Время работы компании" id="time2" type="time">
+
+                     <h3 style="font-family: Montserrat;"> Выберите диапозон дат</h3><br>
+                     <input type="date" id="date1" атрибуты>
+                     <input type="date" id="date2" атрибуты>
+                     <input type="date" id="date3" атрибуты>
+                     <input type="date" id="date4" атрибуты>
+                    <Api date></Api date>
+                     
+                     <button style="width: 150px;" onclick="click_7()">Отправить</button>
+                     
+                    
+        </div>
+        </div>
+        </div>
+        <div class="foot">
+            <h3 style="text-align: right; font-family: Montserrat Regular; color:rgb(88, 88, 88);">©️</h3><h3 style="text-align: right; font-family: Montserrat Regular; color:rgb(88, 88, 88);">Departure<br>Dynamics</h3><h3 style="text-align: right; font-family: Montserrat Regular; color:rgb(88, 88, 88);">Project made by Oaks Dungeon</h3>
+        
+        </div>
+
+</body>
+</html>
