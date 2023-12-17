@@ -200,3 +200,37 @@ async def inference_catboost(request: Request):
         HTMLResponse: Ответ с содержимым HTML-шаблона 'inference_catboost.html'.
     """
     return HTMLResponse(open('templates/docs/api/inference_catboost.html').read())
+
+
+@client.get('/')
+async def index(request: Request):
+    return HTMLResponse(open('templates/site/index.html').read())
+ 
+@client.get('/sign')
+async def sign_in(request: Request):
+    return HTMLResponse(open('templates/site/sign.html').read())
+
+@client.get('/history')
+async def sign_out(request: Request):
+    return HTMLResponse(open('templates/site/history.html').read())
+
+@client.get('/lk')
+async def lk(request: Request):
+    return HTMLResponse(open('templates/site/lk.html').read())
+
+@client.get('/train')
+async def train(request: Request):
+    return HTMLResponse(open('templates/site/train.html').read())
+
+@client.get('/parse')
+async def parse(request: Request):
+    return HTMLResponse(open('templates/site/parse.html').read())
+
+@client.get('/predict')
+async def predict(request: Request):
+    return HTMLResponse(open('templates/site/predict.html').read())
+
+
+@client.get('/dashboard')
+async def dashboard(request: Request):
+    return HTMLResponse(open('templates/site/dashboard.html').read())

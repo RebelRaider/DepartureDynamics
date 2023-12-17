@@ -465,10 +465,8 @@ async def delete_mail_parse(request: Request, token: str, name: str) -> schemas.
         if name in dt.data_path:
             if dt.user_id == user.id:
                 await dt.delete()
-
-                return {
-                    'status': True
-                }
+                break
+                
 
     return {
         'status': True

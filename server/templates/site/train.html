@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body >
+  <link rel="stylesheet" href="/static/css/yakutia.css">
+
+  <script src='/static/js/yakutia.js'></script>
+  <script src='/static/js/api3.js'></script>
+
+  <div class="bodysign">
+            <div class="header blocks">
+            
+                <img class="img blocks" src="/static/images/webdesignDD_0000s_0000s_0000_Logo-Dashboard 1.png">
+                <a class="blocks" style="text-decoration: none;" href="/"><h3 class="blocks zagolovok">Departure <br> Dynamics</h3></a>
+                <a class="blocks login" href="/lk">Личный кабинет</a>
+                <a style="margin-left: 20px;" class="login" href="/train">Загрузка</a>
+                <a style="margin-left: 20px;" class="login" href="/history">История</a>
+                <a class="blocks login" href="/">Выход</a>
+            </div>
+            
+            <div class="login-page3">
+                <div class="formthree">
+
+                    <h3 class="textzg">Загрузите Ваш файл</h3>
+                    <h3 class="textzg3">На этой странице Вы можете создать модель,
+                        обученную основываясь на Ваших данных</h3>
+
+
+                        <label class="input-file">
+	   	<span class="input-file-text" type="text"></span>
+	   	<input id="csv-file" value="Загрузите файл (.csv)" type="file">        
+ 	   	<span class="input-file-btn">Выберите файл</span>
+ 	</label>
+                    
+                     
+
+                     <form>
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script><div class="select">
+                            <input class="select__input" type="hidden" name="">
+                            <!-- <select id="model_type" class="select__list" style="display: none;"> -->
+                                <!-- <option class="select__item" value="model" style="position: relative;border-radius:10px; border: 3px solid #818181;">Модель</option> -->
+                                <!-- <option class="select__item" value="optimize" style="position: relative;border-radius:10px; border: 3px solid #818181;">Оптимизированная модель</option> -->
+                                <!-- </select> -->
+                                <select class="select__head"id="model_type">
+                                    <option value="model">Модель</option>
+                                    <option value="optimize">Оптимизированная</option>
+                                </select>
+                        </div>
+                     </form>
+                     <input onclick="click_5()" id="model_name" style="border: 3px solid #818181; color: #818181;position: relative; top: 70px; width: 430px; left: 160px; border-radius: 10px;" value="Название модели" type="text">
+                     
+                     <button style="position: relative; left: -130px;top: 150px; width: 150px; border-radius: 10px; padding: 10px; font-family: Montserrat Medium;">Отправить</button>
+                     
+                    <a style="left: -310px;top: 200px;width: 300px;position: relative;font-family: Montserrat;"href="/predict">Сделать прогноз</a>
+        </div>
+        </div>
+        </div>
+        <div class="foot">
+            <h3 style="text-align: right; font-family: Montserrat Regular; color:rgb(88, 88, 88);">©️</h3><h3 style="text-align: right; font-family: Montserrat Regular; color:rgb(88, 88, 88);">Departure<br>Dynamics</h3><h3 style="text-align: right; font-family: Montserrat Regular; color:rgb(88, 88, 88);">Project made by Oaks Dungeon</h3>
+        
+        </div>
+
+</body>
+</html>
