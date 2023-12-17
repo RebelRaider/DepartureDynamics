@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log("error");
             } else {
                 localStorage.setItem('token', data.token);
-                window.location.replace('yakutia5.html');
+                window.location.replace('/lk');
             }
         })
         .catch(error => {
