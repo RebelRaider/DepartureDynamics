@@ -90,8 +90,11 @@ def parse_email(email_address, password, start_date, end_date, work_start_time, 
     }
 
     with imaplib.IMAP4_SSL("imap.gmail.com") as mail:
-        mail.login(email_address, password)
-        
+        try:
+            mail.login(email_address, password)
+        except Exception as e:
+            print(f"ошибка авторизации, Email:{email_address}")
+            return None
         start_date_str = start_date.strftime("%d-%b-%Y")
         end_date_str = end_date.strftime("%d-%b-%Y")
 
