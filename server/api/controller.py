@@ -193,15 +193,22 @@ async def inference(request: Request,
         return exceptions.wrong_file_type
 
     user: User = await utils.get_user_from_token(token, User)
-    model: str = await UserModels.objects.get(model_name=model_name)
+    print(user.id)
+    model = None
+    for m in await UserModels.objects.all():
+        print(F"{m.model_name} {model_name} {m.model_name.strip() == model_name.strip()}")
+        if m.model_name.strip() == model_name.strip():
+            model = m
+            break
+    # model: UserModels = await UserModels.objects.get(model_name=model_name)
     save_to: str = os.path.join(await user.get_user_folder(), 'predict_files', file.filename)
 
     with open(save_to, 'wb') as f:
         f.write(file.file.read())
-
+    mdl = os.path.join(model.model_path, model_name)
     inference_catboost(
         save_to,
-        os.path.join(model.model_path, model_name),
+        mdl.replace(' ', ''),
         os.path.join(
             await user.get_user_folder(),
             'predictions',
@@ -329,7 +336,7 @@ async def delete_prediction(request: Request,
     predict: QuerySet = await UserHistory.objects.get(predict_name=predict_name)
 
     if predict.user_id == user.id:
-        delete_path: str = predict.prediction + '.csv'
+        delete_path: str = os.getcwd() + predict.prediction + '.csv'
         os.remove(delete_path)
         await predict.delete()
 
