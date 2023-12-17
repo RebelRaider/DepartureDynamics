@@ -382,20 +382,6 @@ async def parse_mail_controller(request: Request,
     with open(save_to, 'wb') as f:
         f.write(file.file.read())
 
-    await service.parse_mail(
-        start_date_baseline=start_date_baseline,
-        end_date_baseline=end_date_baseline,
-        start_date_comparison=start_date_comparison,
-        end_date_comparison=end_date_comparison,
-        work_start_time_hours=work_start_time_hours,
-        work_start_time_minutes=work_start_time_minutes,
-        work_end_time_hours=work_end_time_hours,
-        work_end_time_minutes=work_end_time_minutes,
-        path_to_save=path_to_save,
-        save_to=save_to,
-        user=user
-    )
-
     res = process_email_accounts(
         start_date_baseline=start_date_baseline,
         end_date_baseline=end_date_baseline,
@@ -407,6 +393,20 @@ async def parse_mail_controller(request: Request,
         path_to_save=path_to_save
     )
 
+    await service.parse_mail(
+            start_date_baseline=start_date_baseline,
+            end_date_baseline=end_date_baseline,
+            start_date_comparison=start_date_comparison,
+            end_date_comparison=end_date_comparison,
+            work_start_time_hours=work_start_time_hours,
+            work_start_time_minutes=work_start_time_minutes,
+            work_end_time_hours=work_end_time_hours,
+            work_end_time_minutes=work_end_time_minutes,
+            path_to_save=path_to_save,
+            save_to=save_to,
+            user=user
+        )
+    
     return {
         'file': path_to_save,
         'wrong_emails': res
