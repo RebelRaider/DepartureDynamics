@@ -28,6 +28,44 @@ async def generate_save_path(filename, user: User) -> str:
     return os.path.join(await user.get_user_folder(), 'train_files', filename)
 
 
+@controller.post('/ml/new_model/train')
+async def new_model_train(request: Request,
+                          token: str,
+                          model_name: str,
+                          file: UploadFile = File(...))-> schemas.ModelReturn | dict:
+    """
+    Обучает новую модель на основе загруженного CSV-файла.
+
+    Parameters:
+    - request (Request): Объект запроса FastAPI.
+    - token (str): Токен пользователя для аутентификации.
+    - model_name (str): Имя новой модели.
+    - file (UploadFile): Загруженный CSV-файл для обучения.
+
+    Returns:
+    - ModelReturn | dict: Возвращает данные о результате обучения модели или словарь с ошибкой.
+    """  
+    if await utils.check_model_name(model_name, UserModels):
+        return exceptions.new_model_conflict_name
+    if not await utils.check_file_expansion(file.filename, 'csv'):
+        return exceptions.wrong_file_type
+    
+    user: User = await utils.get_user_from_token(token, User)
+    save_to: str = await generate_save_path(file.filename, user)
+    model_path: str = os.path.join(await user.get_user_folder(), 'models')
+    
+    with open(save_to, 'wb') as f:
+        f.write(file.file.read())
+    
+    await service.create_new_model(user, save_to, model_name, model_path)
+    
+    train_catboost(save_to, os.path.join(model_path, model_name))
+    
+    return {
+        'status' : True
+    }
+
+
 @controller.post('/user/auth/sign-up')
 async def sign_up(request: Request,
                   username: str = 'username',
@@ -90,42 +128,6 @@ async def reset_password(request: Request,
     return await service.reset_password(user, old, new)
 
 
-@controller.post('/ml/new_model/train')
-async def new_model_train(request: Request,
-                          token: str,
-                          model_name: str,
-                          file: UploadFile = File(...))-> schemas.ModelReturn | dict:
-    """
-    Обучает новую модель на основе загруженного CSV-файла.
-
-    Parameters:
-    - request (Request): Объект запроса FastAPI.
-    - token (str): Токен пользователя для аутентификации.
-    - model_name (str): Имя новой модели.
-    - file (UploadFile): Загруженный CSV-файл для обучения.
-
-    Returns:
-    - ModelReturn | dict: Возвращает данные о результате обучения модели или словарь с ошибкой.
-    """  
-    if await utils.check_model_name(model_name, UserModels):
-        return exceptions.new_model_conflict_name
-    if not await utils.check_file_expansion(file.filename, 'csv'):
-        return exceptions.wrong_file_type
-    
-    user: User = await utils.get_user_from_token(token, User)
-    save_to: str = await generate_save_path(file.filename, user)
-    model_path: str = os.path.join(await user.get_user_folder(), 'models')
-    
-    with open(save_to, 'wb') as f:
-        f.write(file.file.read())
-    
-    await service.create_new_model(user, save_to, model_name, model_path)
-    
-    train_catboost(save_to, os.path.join(model_path, model_name))
-    
-    return {
-        'status' : True
-    }
     
     
 @controller.post('/ml/new_model/optimize')
@@ -389,7 +391,7 @@ async def parse_mail_controller(request: Request,
         work_start_time_minutes=work_start_time_minutes,
         work_end_time_hours=work_end_time_hours,
         work_end_time_minutes=work_end_time_minutes,
-        data_path=path_to_save,
+        path_to_save=path_to_save,
         save_to=save_to,
         user=user
     )
