@@ -196,7 +196,7 @@ async def parse_mail(user, start_date_baseline: datetime,
         work_start_time_minutes=work_start_time_minutes,
         work_end_time_hours=work_end_time_hours,
         work_end_time_minutes=work_end_time_minutes,
-        path_to_save=path_to_save,
+        data_path=path_to_save,
         save_to=save_to,
         user_id=user.id
     )
