@@ -95,65 +95,65 @@ function Click_11(predict_name_1)
 
         
         
-        url12=url_api + "api/v1/model?token=" + token;
-        fetch(url12, {
-            method: 'GET',
-            headers: {
-        
-            },
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`Ошибка HTTP: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(data => {
-            // Обработка успешного ответа
-            console.log('Successful Response:', data);
-            history_2 = document.getElementById("history1");
+url12=url_api + "api/v1/model?token=" + token;
+fetch(url12, {
+    method: 'GET',
+    headers: {
 
-            length = data.models.length;
-            k = 0;
-            while (k < length)
-            {
-                tr1_1 = document.createElement('tr');
-                th1_1 = document.createElement('th');
-                th2_1 = document.createElement('th');
-                th3_1 = document.createElement('th');
-                th4_1 = document.createElement('th');
-                th5_1 = document.createElement('th');
-                th6_1 = document.createElement('th');
-                a1_1 = document.createElement('button');
-                date2 = data.models[k].created.split("T");
-                th1_1.textContent = data.models[k].id;
-                th2_1.textContent = data.models[k].model_name;
-                th3_1.textContent = "model";
-                th4_1.textContent = date2[0];
-                th5_1.textContent = "-";
-                a1_1.textContent = "Удалить запись";
-                a1_1.addEventListener("click", Click_12(data.models[k].model_name));
-                th6_1.appendChild(a1_1);
-                    
-                //th5_1.onclick = Click_12(data.models[k].model_name );
-        
-        
-                tr1_1.appendChild(th1_1);
-                tr1_1.appendChild(th2_1);
-                tr1_1.appendChild(th3_1);
-                tr1_1.appendChild(th4_1);
-                tr1_1.appendChild(th5_1);
-                tr1_1.appendChild(th6_1);
+    },
+})
+.then(response => {
+    if (!response.ok) {
+        throw new Error(`Ошибка HTTP: ${response.status}`);
+    }
+    return response.json();
+})
+.then(data => {
+    // Обработка успешного ответа
+    console.log('Successful Response:', data);
+    history_2 = document.getElementById("history1");
 
-        
-                history_2.appendChild(tr1_1);
-                k++;
-            }
-        })
-        .catch(error => {
-            // Обработка ошибки
-            console.error('Validation Error:', error);
-        });
+    length = data.models.length;
+    k = 0;
+    while (k < length)
+    {
+        tr1_1 = document.createElement('tr');
+        th1_1 = document.createElement('th');
+        th2_1 = document.createElement('th');
+        th3_1 = document.createElement('th');
+        th4_1 = document.createElement('th');
+        th5_1 = document.createElement('th');
+        th6_1 = document.createElement('th');
+        a1_1 = document.createElement('button');
+        date2 = data.models[k].created.split("T");
+        th1_1.textContent = data.models[k].id;
+        th2_1.textContent = data.models[k].model_name;
+        th3_1.textContent = "model";
+        th4_1.textContent = date2[0];
+        th5_1.textContent = "-";
+        a1_1.textContent = "Удалить запись";
+        a1_1.addEventListener("click", Click_12(data.models[k].model_name));
+        th6_1.appendChild(a1_1);
+            
+        //th5_1.onclick = Click_12(data.models[k].model_name );
+
+
+        tr1_1.appendChild(th1_1);
+        tr1_1.appendChild(th2_1);
+        tr1_1.appendChild(th3_1);
+        tr1_1.appendChild(th4_1);
+        tr1_1.appendChild(th5_1);
+        tr1_1.appendChild(th6_1);
+
+
+        history_2.appendChild(tr1_1);
+        k++;
+    }
+})
+.catch(error => {
+    // Обработка ошибки
+    console.error('Validation Error:', error);
+});
 
 function Click_12(model_name)
 {
@@ -180,77 +180,77 @@ function Click_12(model_name)
         });
     }
 
-    url14=url_api + "api/v1/predict?token=" + token;
-    fetch(url14, {
-        method: 'GET',
-        headers: {
-    
-        },
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`Ошибка HTTP: ${response.status}`);
-        }
-        return response.json();
-    })
-    .then(data => {
-        // Обработка успешного ответа
-        console.log('Successful Response:', data);
-        history_3 = document.getElementById("history1");
+url14=url_api + "api/v1/predict?token=" + token;
+fetch(url14, {
+    method: 'GET',
+    headers: {
 
-        length = data.predicts.length;
-        k = 0;
-        while (k < length)
-        {
-            tr1_2 = document.createElement('tr');
-            th1_2 = document.createElement('th');
-            th2_2 = document.createElement('th');
-            th3_2 = document.createElement('th');
-            th4_2 = document.createElement('th');
-            th5_2 = document.createElement('th');
-            th6_2 = document.createElement('th');
-            a2 = document.createElement('button');
-            a2_1 = document.createElement('button');
-            date3 = data.predicts[k].created.split("T");
+    },
+})
+.then(response => {
+    if (!response.ok) {
+        throw new Error(`Ошибка HTTP: ${response.status}`);
+    }
+    return response.json();
+})
+.then(data => {
+    // Обработка успешного ответа
+    console.log('Successful Response:', data);
+    history_3 = document.getElementById("history1");
 
-            predict_file_1 = data.predicts[k].predict_file.split("/");
-            path__1= data.predicts[k].prediction;
-            console.log(path__1);
-            localStorage.setItem('bufer', path__1);
+    length = data.predicts.length;
+    k = 0;
+    while (k < length)
+    {
+        tr1_2 = document.createElement('tr');
+        th1_2 = document.createElement('th');
+        th2_2 = document.createElement('th');
+        th3_2 = document.createElement('th');
+        th4_2 = document.createElement('th');
+        th5_2 = document.createElement('th');
+        th6_2 = document.createElement('th');
+        a2 = document.createElement('button');
+        a2_1 = document.createElement('button');
+        date3 = data.predicts[k].created.split("T");
 
-            predict_name_1 = data.predicts[k].predict_name.split("/");
-            name1 = data.predicts[k].predict_name.split(".");
-            th1_2.textContent = data.predicts[k].id;
-            th2_2.textContent = data.predicts[k].predict_name;
-            th3_2.textContent = "predict";
-            th4_2.textContent = date3[0];
-            a2.textContent = "Ссылка";
-            a2.addEventListener("click", () => predict_dashboard(path__1))
-            th5_2.appendChild(a2);
-            a2_1.textContent = "Удалить запись";
-            a2_1.addEventListener("click", Click_13(data.predicts))
-            th6_2.appendChild(a2_1);
+        predict_file_1 = data.predicts[k].predict_file.split("/");
+        path__1= data.predicts[k].prediction;
+        console.log(path__1);
+        localStorage.setItem('bufer', path__1);
 
-                
-            //th6_2.onclick = Click_12(data.predicts[k].predict_name);
-    
-    
-            tr1_2.appendChild(th1_2);
-            tr1_2.appendChild(th2_2);
-            tr1_2.appendChild(th3_2);
-            tr1_2.appendChild(th4_2);
-            tr1_2.appendChild(th5_2);
-            tr1_2.appendChild(th6_2);
+        predict_name_1 = data.predicts[k].predict_name.split("/");
+        name1 = data.predicts[k].predict_name.split(".");
+        th1_2.textContent = data.predicts[k].id;
+        th2_2.textContent = data.predicts[k].predict_name;
+        th3_2.textContent = "predict";
+        th4_2.textContent = date3[0];
+        a2.textContent = "Ссылка";
+        a2.addEventListener("click", () => predict_dashboard(path__1))
+        th5_2.appendChild(a2);
+        a2_1.textContent = "Удалить запись";
+        a2_1.addEventListener("click", Click_13(data.predicts))
+        th6_2.appendChild(a2_1);
 
-    
-            history_3.appendChild(tr1_2);
-            k++;
-        }
-    })
-    .catch(error => {
-        // Обработка ошибки
-        console.error('Validation Error:', error);
-    });
+            
+        //th6_2.onclick = Click_12(data.predicts[k].predict_name);
+
+
+        tr1_2.appendChild(th1_2);
+        tr1_2.appendChild(th2_2);
+        tr1_2.appendChild(th3_2);
+        tr1_2.appendChild(th4_2);
+        tr1_2.appendChild(th5_2);
+        tr1_2.appendChild(th6_2);
+
+
+        history_3.appendChild(tr1_2);
+        k++;
+    }
+})
+.catch(error => {
+    // Обработка ошибки
+    console.error('Validation Error:', error);
+});
 
 function Click_13(predict_name)
 {

@@ -20,10 +20,6 @@
                 <a style="margin-left: 20px;" class="login" href="/history">История</a>
                 <a class="blocks login" href="/">Выход</a>
             </div>
-            <div>
-                <h3 style=" width: 800px; color:white;position: relative; top: 50px;left: 300px;font-family: Montserrat; font-size: 40px;">Добро пожаловать, %username%!</h3>
-            
-        </div>
             <div class="login-page2">
                 <div class="formtwo">
 
@@ -35,14 +31,22 @@ c логинами и паролями ниже:</h3>
                     <input  style="font-style: none;"id="csvfile" type="file">
                      
 
-                     <input value="Введите название" id="path" type="text">
-                     <input value="Время работы компании" id="time1" type="time">
-                     <input value="Время работы компании" id="time2" type="time">
+                     <input placeholder="Введите название" id="path" type="text">
+                     <h4 style="font-family: Montserrat;"> Начало рабочей смены</h4><br>
+                     <input placeholder="Время работы компании" id="time1" type="time">
+                     <h4 style="font-family: Montserrat;"> Конец рабочей смены</h4><br>
+                     <input placeholder="Время работы компании" id="time2" type="time">
 
                      <h3 style="font-family: Montserrat;"> Выберите диапозон дат</h3><br>
+                     <h4 style="font-family: Montserrat;"> Начало базового периода</h4><br>
                      <input type="date" id="date1" атрибуты>
+                     <h4 style="font-family: Montserrat;"> Конец базового периода</h4><br>
                      <input type="date" id="date2" атрибуты>
+                     
+                     <h4 style="font-family: Montserrat;"> Начало сравнительного периода</h4><br>
                      <input type="date" id="date3" атрибуты>
+                     
+                     <h4 style="font-family: Montserrat;"> Конец сравнительного периода</h4><br>
                      <input type="date" id="date4" атрибуты>
                     <Api date></Api date>
                      
